@@ -1,0 +1,38 @@
+.modal.fade.shadow(
+	id="addRecordForm"
+	tabindex="-1"
+)
+	.modal-dialog.modal-dialog-centered
+		.modal-content
+			.modal-header.px-30
+				h5.modal-title Добавить новую запись
+				button.btn-close.btn.btn-icon.btn-sm(type="button" data-bs-dismiss="modal" aria-label="Close")
+
+			.modal-body.p-30
+				form(action='#')
+					.mb-3
+						label.form-label(for="addRecordDate") Дата
+						input#addRecordDate.form-control.form-control-lg(type="date")
+
+					.mb-3
+						label.form-label(for="addRecordTitle") Наименование
+						input#addRecordTitle.form-control.form-control-lg(type="text")
+
+					.mb-3
+						label.form-label Тип операции
+						select#addRecordType
+							option(value="income") Приход
+							option(value="outcome") Расход
+							option(value="pending") В ожидании
+
+					.mb-3
+						label.form-label(for="addRecordAmount") Сумма
+						input#addRecordAmount.form-control.form-control-lg(type="text")
+
+					.mb-3
+						label.form-label(for="addRecordDescr") Описание
+						textarea#addRecordDescr.form-control.form-control-lg
+
+					button.btn.btn-primary.btn-lg.px-3.w-100(type="submit") Отправить
+
+

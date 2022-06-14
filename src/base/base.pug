@@ -1,0 +1,47 @@
+include ../mixins/pug/svg-icon
+include ../components/modal/modal
+
+block variables
+	-
+		var baseDir = './';
+
+doctype html
+html(lang="ru")
+	//- Include head
+	include ./pug/head
+
+	body
+		.page
+			//- Include sidebar
+			include ../components/sidebar/sidebar
+
+			.content.content--right
+				//- Include header
+				include ../components/header/header
+
+				main.main
+					if(!isFrontpage)
+						nav.breadcrumb.fz-12
+							li.breadcrumb-item
+								a(href="/") Главная
+
+							li.breadcrumb-item.active= title
+
+					block main
+
+				//- Include footer
+				include ../components/footer/footer
+
+		.d-none
+			include ../../dist/images/sprite.svg
+
+		//- Include modal form
+		include ../components/form/form--add
+
+		//- Confirm
+		+modal('confirm', 'Вы действительно хотите удалить?', 'Данную операцию отменить будет не возможно!', true)
+
+
+
+		script(src=`${baseDir}js/main.js`)
+		block script

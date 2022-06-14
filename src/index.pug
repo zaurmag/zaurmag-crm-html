@@ -1,0 +1,24 @@
+extends ./base/base
+
+append variables
+	- var title = 'Система учета доходов/расходов по проектам'
+	- var isFrontpage = true
+
+block main
+	//- Page header
+	header.main__header
+		h1.h4.main__header-tlt Главная панель
+		button.main__add-btn.btn.btn-primary.px-md-3.ms-auto(
+			type="button"
+			data-bs-toggle="modal"
+			data-bs-target="#addRecordForm"
+		)
+			span.d-sm-inline.d-none Добавить
+			+icon("plus-lg", " ms-sm-1")
+
+	//- Records list
+	include ./components/card/card--records-list
+
+	.row.gy-30
+		.col-xl-6.offset-xl-6
+			include ./components/card/card--report

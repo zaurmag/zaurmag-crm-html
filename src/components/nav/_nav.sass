@@ -1,0 +1,31 @@
+.nav
+	font-size: 14px
+
+	.nav-item
+		margin-bottom: 5px
+
+	.nav-link
+		color: #96a2c1
+
+		.icon
+			font-size: 16px
+
+		&.is-active
+			color: $white
+
+		&:hover
+			&:not(.active)
+				color: $white
+
+	@include media-breakpoint-up(lg)
+		.is-active &,
+		.is-compact &
+			text-align: center
+
+			.nav-text
+				display: none
+
+			.nav-link
+				.icon
+					font-size: 24px
+					margin-right: 0 !important

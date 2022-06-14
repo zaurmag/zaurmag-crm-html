@@ -1,0 +1,35 @@
+.main
+	padding: px-to-rem(15px)
+	@include media-breakpoint-up(lg)
+		padding: px-to-rem(30px)
+
+	&__header
+		border-bottom: 1px solid $gray-200
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-bottom: 15px
+		margin-bottom: 20px
+		@include media-breakpoint-up(lg)
+			margin-bottom: 40px
+			padding-bottom: 30px
+
+		&-tlt
+			font-weight: 600
+			margin-bottom: 0
+
+	@include media-breakpoint-down(md)
+		&__add-btn
+			border-radius: 50%
+			position: fixed
+			right: 20px
+			bottom: 20px
+			z-index: 100
+			padding: 0
+			height: 60px
+			width: 60px
+
+			.icon
+				font-size: 24px
+
+

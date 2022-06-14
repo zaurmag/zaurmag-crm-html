@@ -1,0 +1,53 @@
+.pagination
+	$self: &
+
+	// Page size select
+	&__pagesize
+		display: flex
+		justify-content: center
+		@include media-breakpoint-up(md)
+			justify-content: flex-start
+
+		.select
+			height: auto
+
+	// Items list
+	&__list
+		align-items: center
+		display: flex
+		font-size: 14px
+		line-height: 1
+		margin: 0
+		padding: 0
+		justify-content: center
+		flex-wrap: wrap
+		@include media-breakpoint-up(md)
+			justify-content: flex-start
+
+	&__item
+		&:not(:last-child)
+			margin-right: 10px
+
+		// Disabled
+		&.is-disabled
+			display: none
+
+			#{$self}
+				&__link
+					color: $gray-400
+					pointer-events: none
+		// Active
+		&.is-active
+			#{$self}
+				&__link
+					background-color: $primary
+					border-radius: $border-radius
+					color: $white
+
+	&__link
+		color: $secondary
+		display: block
+		padding: 10px 12px
+		text-decoration: none
+
+

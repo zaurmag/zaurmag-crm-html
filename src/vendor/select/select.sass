@@ -1,0 +1,99 @@
+/**
+ * Select
+ */
+.select
+	$self: &
+
+	position: relative
+	font-size: 14px
+	height: 40px
+
+	&__text
+		align-items: center
+		display: flex
+		color: $gray-800
+		cursor: pointer
+		justify-content: space-between
+		height: 100%
+
+		&::after
+			border-top: 1px solid #000
+			border-right: 1px solid #000
+			content: ""
+			transform: rotate(135deg)
+			transition: transform .2s ease
+			margin-left: 10px
+			display: block
+			height: 6px
+			width: 6px
+
+	&__dropdown
+		display: none
+		position: absolute
+		top: 40px
+		left: 0
+		right: 0
+		z-index: 10
+		min-width: 120px
+
+	&.is-open
+		#{$self}
+			&__dropdown
+				display: block
+
+			&__text
+				&::after
+					transition: transform .2s ease
+					transform: rotate(-45deg)
+
+	&__list
+		background-color: #fff
+		border: 1px solid $gray-300
+		border-radius: 5px
+		margin: 0
+		padding: 0
+		list-style: none
+		font-size: 14px
+		overflow: hidden
+		white-space: nowrap
+
+		li
+			padding: 6px 15px
+			cursor: pointer
+			overflow: hidden
+			text-overflow: ellipsis
+
+			&:hover
+				background-color: $gray-100
+
+			&.is-selected
+				background-color: $gray-200
+
+	/**
+	 * Bordered
+	 */
+	&--bordered
+		border: 1px solid $gray-400
+		border-radius: $border-radius
+		height: auto
+
+		#{$self}
+			&__text
+				padding: 14px 20px
+
+			&__dropdown
+				top: 50px
+
+	/**
+	 * Styled
+	 */
+	&--styled
+		padding-left: 15px
+		padding-right: 15px
+		border-radius: $border-radius
+		height: 35px
+
+		&:hover,
+		&.is-open
+			background-color: $blue-100
+			transition: background-color .2s ease

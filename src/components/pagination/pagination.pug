@@ -1,0 +1,28 @@
+nav.pagination
+	.row.align-items-center.gy-3
+		.col-sm
+			.pagination__pagesize
+				.text-secondary.me-2 Показать:
+				select#pageSize
+					option(value="4") 4
+					option(value="8") 8
+					option(value="12") 12
+					option(value="16") 16
+				.text-secondary.ms-3 из
+				.text-secondary.ms-2 20
+
+		.col-sm-auto
+			ul.pagination__list
+				- var i = 1
+				li.pagination__item.is-disabled
+					a.pagination__link(href="#") Предыдущий
+
+				while i <= 5
+					- var active = i === 1 ? 'is-active' : null
+					li.pagination__item(class= active)
+						a.pagination__link(href="#")= i
+
+					- i++
+
+				li.pagination__item
+					a.pagination__link(href="#") Следующий

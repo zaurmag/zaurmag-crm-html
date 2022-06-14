@@ -1,0 +1,70 @@
+.form
+	$self: &
+
+	&__group
+		&--icon
+			position: relative
+
+			.icon
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+				font-size: 12px
+
+			.form__control
+				padding-left: 25px
+
+
+	// Label
+	&__label
+		color: $secondary
+		font-size: 14px
+		line-height: 1.2
+		margin: 0
+
+		&--textarea
+			transform: none
+			top: 15px
+
+	// Input
+	&__control
+		color: $gray-800
+		border: none
+		border-bottom: 1px solid $gray-200
+		padding: 0 15px
+		font-size: 14px
+		transition: border-color 0.2s ease
+		height: 40px
+		width: 100%
+
+		&:focus
+			border-color: $primary
+			transition: border-color 0.2s ease
+			outline: none
+
+		&--textarea
+			padding: 15px
+			height: 120px
+
+	.btn
+		font-size: 14px
+
+
+	// Password
+	&__password
+		position: relative
+
+		input
+			padding-right: 35px
+
+		&-toggle
+			color: $gray-800
+			font-size: 16px
+			position: absolute
+			top: 50%
+			right: 20px
+			transform: translateY(-50%)
+
+
+

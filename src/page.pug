@@ -1,0 +1,37 @@
+extends ./base/base
+
+append variables
+	- var title = 'Страница проекта'
+
+block main
+	//- Page header
+	header.main__header
+		h1.h4.main__header-tlt Продление сайта lakia3d.ru
+
+	.card.shadow-sm
+		.card-body.p-30
+			.row
+				.col-md-6
+					.text-secondary
+						time.d-block.mb-3 Дата: <span class="fw-medium">21.05.2021 г.</span>
+						.mb-3 Сумма: <span class="fw-medium">2 500 руб.</span>
+						.mb-3
+							| Тип операции:
+							span.badge.bg-success.ms-2.opacity-75 Приход
+						.mb-3
+							h6.mb-2 Описание:
+							p Описание данной задачи.
+
+					.d-flex
+						button.btn.btn-success.px-3(
+							type="button"
+							data-bs-toggle="modal"
+							data-bs-target="#addRecordForm"
+						) Редактировать
+						button.btn.btn-danger.px-3.ms-2(
+							type="button"
+							data-bs-toggle="modal"
+							data-bs-target="#confirm"
+						) Удалить
+
+

@@ -1,0 +1,14 @@
+.content
+	display: flex
+	flex-direction: column
+	height: 100%
+
+	&--right
+		@include media-breakpoint-up(lg)
+			transition: padding-left .2s ease
+			padding-left: px-to-rem(260px)
+
+			.is-active &,
+			&.is-full
+				padding-left: px-to-rem(80px)
+				transition: padding-left .2s ease

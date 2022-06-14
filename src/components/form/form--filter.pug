@@ -1,0 +1,28 @@
+.form.form--filter.row.align-items-end.gy-2
+	.col-xl-auto
+		.row.align-items-center.g-3.g-lg-0
+			.col-sm-2.col-md-auto
+				label.form__label.me-3(for="filterDateFrom") Период:
+
+			.col-sm-5.col-md-auto.d-flex.align-items-center
+				label.text-secondary.me-2 от:
+				input#filterDateFrom.form__control(type="date")
+
+			.col-sm-5.col-md-auto.d-flex.align-items-center
+				label.form__label.me-2(for="filterDateTo") до:
+				input#filterDateTo.form__control(type="date")
+
+	.col-xl-auto
+		.d-flex.align-items-center
+			label.form__label.me-3 Тип операции:
+			select#filterSelectType.select--js
+				option(value="all") Все
+				option(value="income") Приход
+				option(value="outcome") Расход
+
+	.col-xl
+		.form__group.form__group--icon
+			+icon("search")
+			input.form__control(type="search" placeholder="Поиск по наименованию")
+
+		// button.btn.btn-sm.btn-outline-primary.ms-3(type="button") Сбросить

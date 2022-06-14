@@ -1,0 +1,50 @@
+.card.shadow-sm.mb-30
+	header.card-header
+		.row.align-items-center
+			.col-xxl.mb-2.mb-xxl-0.d-flex.align-items-center.justify-content-between
+				h5.h6.mb-0.card-header-title Список операций
+				button.btn.btn-light.d-xl-none(type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false")
+					+icon("sliders")
+
+			#filter.col-xxl-auto.collapse.d-xl-block
+				include ../form/form--filter
+
+
+	.table-responsive
+		table.table.align-middle.table-borderless.table-nowrap
+			thead.table-light
+				tr
+					th
+						input.form-check-input.float-none(type="checkbox" value="")
+
+					th #
+					th Наименование
+					th Дата
+					th.no-wrap Описание
+					th Тип операции
+					th Сумма
+
+			tbody
+				- var i = 1
+				while i <= 10
+					tr
+						td
+							input.form-check-input.float-none(type="checkbox" value="")
+						td= i
+						td
+							a.fw-medium.link-dark.text-decoration-none(href="/page.html") Гасан lakia3d.ru
+						td 02.06.20221
+						td.no-wrap(style="min-width: 380px") Продление сайта lakia3d.ru Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, tempore.
+						td
+							if (i > 2 && i < 6)
+								span.indikator-point.bg-success.me-2
+								| Приход
+							else
+								span.indikator-point.bg-danger.me-2
+								| Расход
+						td 3300
+					- i++
+
+	footer.card-footer
+		//- Pagination
+		include ../pagination/pagination
