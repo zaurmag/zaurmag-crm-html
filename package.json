@@ -65,6 +65,7 @@
     "gulp-webp": "^4.0.1",
     "gulp-zip": "latest",
     "gulp.spritesmith": "latest",
+  	"sass": "latest",
     "vinyl-ftp": "latest",
     "webpack": "latest",
     "webpack-stream": "latest",
@@ -73,7 +74,7 @@
   "dependencies": {
     "@babel/polyfill": "7.4.3",
     "@popperjs/core": "^2.9.2",
-    "bootstrap": "^5.0.0-beta3",
+    "bootstrap": "latest-5",
     "enquire.js": "latest",
     "magnific-popup": "latest",
     "owl.carousel": "latest",
