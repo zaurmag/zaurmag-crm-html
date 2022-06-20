@@ -34,7 +34,7 @@
     "@babel/plugin-transform-runtime": "7.4.3",
     "@babel/preset-env": "7.4.3",
     "@babel/runtime": "7.4.3",
-    "babel-eslint": "10.0.1",
+    "babel-eslint": "latest",
     "babel-loader": "8.0.5",
     "bem-tools-core": "bem-tools/bem-tools-core",
     "bem-tools-create": "bem-tools/bem-tools-create",

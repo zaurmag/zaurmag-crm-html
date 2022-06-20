@@ -1,0 +1,15 @@
+extends ./base/base
+
+append variables
+	- var title = 'Страница профиля пользователя'
+
+block main
+	.profile
+		.profile__header
+			.profile__cover
+				.profile__short-info.text-center
+					.profile__avatar
+						img.profile__avatar-img.img-fluid(src="./images/zaurmag.png" alt="Заур Магомедов")
+						span.indikator.indikator-point.bg-success
+
+					h2.h4.profile__name Заур
