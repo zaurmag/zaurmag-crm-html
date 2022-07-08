@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .icon {
     display: inline-block;
     width: 1em;
@@ -5,42 +7,42 @@
     fill: currentColor;
 }
 
-.icon-arrow-bar-left {    
-    width:(16/16)*1em;
+.icon-arrow-bar-left {
+    width: math.div(16, 16) * 1em;
 }
-.icon-arrow-bar-right {    
-    width:(16/16)*1em;
+.icon-arrow-bar-right {
+    width: math.div(16, 16) * 1em;
 }
-.icon-eye {    
-    width:(16/16)*1em;
+.icon-eye {
+    width: math.div(16, 16) * 1em;
 }
-.icon-eye-slash {    
-    width:(16/16)*1em;
+.icon-eye-slash {
+    width: math.div(16, 16) * 1em;
 }
-.icon-graph-up {    
-    width:(16/16)*1em;
+.icon-graph-up {
+    width: math.div(16, 16) * 1em;
 }
-.icon-people {    
-    width:(16/16)*1em;
+.icon-people {
+    width: math.div(16, 16) * 1em;
 }
-.icon-plus-lg {    
-    width:(16/16)*1em;
+.icon-plus-lg {
+    width: math.div(16, 16) * 1em;
 }
-.icon-search {    
-    width:(16/16)*1em;
+.icon-search {
+    width: math.div(16, 16) * 1em;
 }
-.icon-sliders {    
-    width:(16/16)*1em;
+.icon-sliders {
+    width: math.div(16, 16) * 1em;
 }
-.icon-speedometer2 {    
-    width:(16/16)*1em;
+.icon-speedometer2 {
+    width: math.div(16, 16) * 1em;
 }
-.icon-trash {    
-    width:(16/16)*1em;
+.icon-trash {
+    width: math.div(16, 16) * 1em;
 }
-.icon-wallet2 {    
-    width:(16/16)*1em;
+.icon-wallet2 {
+    width: math.div(16, 16) * 1em;
 }
-.icon-x-circle {    
-    width:(16/16)*1em;
+.icon-x-circle {
+    width: math.div(16, 16) * 1em;
 }

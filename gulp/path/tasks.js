@@ -13,6 +13,5 @@ module.exports = [
 	'./gulp/favicons',
 	'./gulp/zip',
 	'./gulp/ftp',
-	'./gulp/resources',
-	'./gulp/copy'
-];
+	'./gulp/resources'
+]
