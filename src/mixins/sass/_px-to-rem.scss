@@ -1,7 +1,7 @@
 @use "sass:math";
-
 $fz: 16px;
 
 @function px-to-rem($size) {
-	@return math.div($size, $fz) * 1rem;
+    $remSize: math.div($size, $fz);
+    @return $remSize * 1rem;
 }

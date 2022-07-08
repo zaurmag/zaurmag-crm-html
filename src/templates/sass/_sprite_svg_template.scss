@@ -8,7 +8,7 @@
 }
 
 {{#shapes}}
-.icon-{{base:}} {
+.icon-{{base}} {
     width: math.div({{width.inner}}, {{height.inner}}) * 1em;
 }
 {{/shapes}}

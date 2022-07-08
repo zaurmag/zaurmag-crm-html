@@ -1,11 +1,9 @@
-let path = require('./path/path.js');
+const path = require('./path/path.js')
 
 module.exports = function () {
-	$.gulp.task('resources:build', (done) => {
+	$.gulp.task('resources:build', () => {
 		return $.gulp.src(path.path.src.resources)
-			.pipe($.plugins.changed(path.path.build.html))
-			.pipe($.gulp.dest(path.path.build.html));
-		// eslint-disable-next-line no-unreachable
-		done();
-	});
-};
+			.pipe($.plugins.changed(path.path.build.root))
+			.pipe($.gulp.dest(path.path.build.root))
+	})
+}

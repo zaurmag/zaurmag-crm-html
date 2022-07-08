@@ -1,14 +1,13 @@
 module.exports = {
 	path: {
 		build: { // Build files
-			html: 'dist/',
+			root: 'dist/',
 			style: 'dist/css',
 			img: 'dist/images',
 			imgFavicons: 'dist/images/favicons',
 			js: 'dist/js',
 			fonts: 'dist/fonts',
-			zip: 'zip',
-			vue: 'E:/zaurmagProjects/crm/zaurmag-crm-vue/src/assets/css'
+			zip: 'zip'
 		},
 		src: { // Source files
 			pug: 'src/*.pug',
@@ -21,15 +20,15 @@ module.exports = {
 			fonts: 'src/fonts/*',
 			favicon_lg: 'src/images/favicon-lg.png',
 			favicon_sm: 'src/images/favicon-sm.png',
-			resources: 'src/resources/**/*',
+			resources: 'src/resources/**/*'
 		},
 		watch: { // Watch files
 			json: 'src/base/data/*.json',
 			pug: 'src/**/*.pug',
-			style: 'src/**/*',
+			style: 'src/**/*.+(sass|scss|css)'
 		},
 		clean: {
-			all: './dist',
-		},
-	},
-};
+			all: './dist'
+		}
+	}
+}

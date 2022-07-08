@@ -5,18 +5,20 @@
   "main": "gulpfile.js",
   "scripts": {
     "Start": "gulp default",
-    "Minify": "gulp default --minify true",
-    "Start Ftp": "gulp default --ftp true",
-    "Start Js": "gulp default --minify-js true",
-    "Start Css": "gulp default --minify-css true",
-    "MinifyFtp": "gulp default --minify true ftp:build --ftp true",
+    "Minify": "gulp pug:build style:build js:build --minify true",
+    "MinifyHtml": "gulp pug:build --minify-html true",
+    "MinifyJs": "gulp js:build --minify-js true",
+    "MinifyCss": "gulp style:build --minify-css true",
+    "Start Ftp": "gulp default_ftp --ftp true",
     "Ftp": "gulp ftp:build --ftp true",
     "lint:scripts": "./node_modules/.bin/eslint src/**/*.js",
-    "lint:scripts --fix": "./node_modules/.bin/eslint src/**/*.js --fix"
+    "lintFix:scripts": "./node_modules/.bin/eslint src/**/*.js --fix",
+    "zip": "gulp zip:build",
+    "clean": "gulp clean"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaurmag/gulp-pack.git"
+    "url": "https://github.com/zaurmag/gulp-pack.git"
   },
   "keywords": [
     "gulp",
@@ -27,6 +29,7 @@
   "author": "Zaur Magomedov",
   "license": "ISC",
   "devDependencies": {
+    "@babel/polyfill": "7.4.3",
     "@babel/core": "7.4.3",
     "@babel/plugin-proposal-class-properties": "7.4.0",
     "@babel/plugin-proposal-private-methods": "7.4.3",
@@ -34,7 +37,7 @@
     "@babel/plugin-transform-runtime": "7.4.3",
     "@babel/preset-env": "7.4.3",
     "@babel/runtime": "7.4.3",
-    "babel-eslint": "latest",
+    "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "bem-tools-core": "bem-tools/bem-tools-core",
     "bem-tools-create": "bem-tools/bem-tools-create",
@@ -57,7 +60,7 @@
     "gulp-pxtorem": "latest",
     "gulp-rename": "latest",
     "gulp-replace": "latest",
-    "gulp-sass": "latest",
+    "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "latest",
     "gulp-svg-sprite": "latest",
     "gulp-tinypng": "latest",
@@ -65,17 +68,17 @@
     "gulp-webp": "^4.0.1",
     "gulp-zip": "latest",
     "gulp.spritesmith": "latest",
-  	"sass": "latest",
+    "sass": "latest",
     "vinyl-ftp": "latest",
     "webpack": "latest",
     "webpack-stream": "latest",
     "yargs": "latest"
   },
   "dependencies": {
-    "@babel/polyfill": "7.4.3",
-    "@popperjs/core": "^2.9.2",
-    "bootstrap": "latest-5",
+    "bootstrap": "latest",
     "enquire.js": "latest",
+    "inputmask": "latest",
+    "jquery-form-styler": "latest",
     "magnific-popup": "latest",
     "owl.carousel": "latest",
     "svg4everybody": "latest"

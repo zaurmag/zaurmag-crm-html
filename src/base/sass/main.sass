@@ -1,9 +1,13 @@
 /**
- * Includes
+ * Bootstrap
  */
+@import './variables'
+@import '../../vendor/bootstrap/bootstrap'
 
-@import 'variables'
-// @import '../../mixins/sass/sprite-img'
+/**
+ * Mixins
+ */
+@import '../../mixins/sass/sprite-img'
 @import '../../mixins/sass/sprite-svg'
 @import '../../mixins/sass/pos-center'
 @import '../../mixins/sass/pos-strech'
@@ -12,8 +16,6 @@
 @import '../../mixins/sass/gradient'
 @import '../../mixins/sass/font-face'
 @import '../../mixins/sass/px-to-rem'
-@import '../../vendor/bootstrap/bootstrap'
-
 
 /**
  * Base
@@ -21,33 +23,14 @@
 @import './fonts'
 @import './base'
 @import './typography'
-// @import './png-icons'
+@import './png-icons'
 
 /**
- * Static blocks
+ * Components
  */
-@import '../../components/page/page'
-@import "../../components/header/header"
-@import "../../components/logo/logo"
-@import "../../components/content/content"
-@import "../../components/main/main"
-@import "../../components/sidebar/sidebar"
-@import "../../components/footer/footer"
+@import '../../components/components'
 
 /**
- * Dev blocks
+ * Vendor styles
  */
-@import "../../components/nav/nav"
-@import "../../components/modal/modal"
-@import "../../components/card/card"
-@import "../../components/form/form"
-@import "../../components/pagination/pagination"
-@import "../../components/indikator/indikator"
-@import "../../components/overlay/overlay"
-@import "../../components/indikator-point/indikator-point"
-
-/**
- * Vendors
- */
-
-@import "../../vendor/select/select"
+@import '../../vendor/vendor'
