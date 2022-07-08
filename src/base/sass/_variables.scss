@@ -1,11 +1,10 @@
-/**
- * Font
- */
-$font-family-open-sans: "Open Sans", sans-serif;
-$font-family-base: $font-family-open-sans;
+// Font
+$font-family-base: "Roboto", sans-serif;
+$enable-smooth-scroll: false;
 
 /**
  * Grid system
+ * -----------------------------------------
  */
 
 // Grid breakpoints
@@ -27,16 +26,26 @@ $container-max-widths: (
 	xxl: 1320px
 );
 
-/**
- * Grid columns
- */
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12;
-$grid-gutter-width:           1.875rem;
+$grid-gutter-width:           1.5rem;
 $grid-row-columns:            6;
+
+// Links
+//$link-color: $blue;
+//$link-decoration:                         none;
+//$link-hover-color:                        darken($link-color, 15%);
+//$link-hover-decoration:                   underline;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+//$emphasized-link-hover-darken-percentage: 15%;
+
 
 /**
  * Spacing
+ * ---------------------------------------------
  */
 $spacer: 1rem;
 $spacers: (
@@ -54,10 +63,13 @@ $spacers: (
 	40: ($spacer * 2.5), // 40px
 	50: ($spacer * 3.125), // 50px
 	60: ($spacer * 3.75), // 60px
+	70: ($spacer * 4.375), // 70px
 	80: ($spacer * 5), // 80px
 	90: ($spacer * 5.625), // 90px
 	100: ($spacer * 6.25) // 100px
 );
+
+// $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
 
 /*
  * Color system
@@ -73,7 +85,7 @@ $gray-500: #adb5bd;
 $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #343a40;
-$gray-900: #132144;
+$gray-900: #212529;
 $black:    #000;
 
 // fusv-disable
@@ -122,7 +134,7 @@ $colors: (
 $primary:       $blue;
 $secondary:     $gray-600;
 $success:       $green;
-$info:          $teal;
+$info:          $cyan;
 $warning:       $yellow;
 $danger:        $red;
 $light:         $gray-100;
@@ -142,80 +154,24 @@ $theme-colors: (
 
 /**
  * Buttons
+ * --------------------------------------
  */
 //$btn-border-radius: 0;
 //$btn-border-radius-lg: 0;
 //$btn-border-radius-sm: 0;
 
-$btn-font-size: 0.875rem;
+//$btn-font-size: 0.875rem;
 //$btn-font-size-sm: 0.875rem;
 //$btn-font-size-lg: 1.125rem;
 
 /**
- * Form
- */
-// $input-border-radius: 0;
-// $input-border-radius-lg: 0;
-// $input-border-radius-sm: 0;
-$input-font-size-lg: 16px;
-$input-btn-padding-x-lg: 20px;
-$input-btn-padding-y-lg: 14px;
-
-$input-box-shadow: none;
-$input-focus-box-shadow: none;
-$form-label-font-size: 14px;
-
-/**
- * Negative margin
- */
-$enable-negative-margins: true;
-
-/**
- * Container
- */
-$container-padding-x: 15px;
-
-/**
- * Tooltips
- */
-$tooltip-bg: $dark;
-$tooltip-font-size: 13px;
-
-/**
- * Card
- */
-$card-border-color: $gray-200;
-$card-spacer-y: 1.25rem;
-$card-spacer-x: 1.25rem;
-$card-cap-bg: $white;
-$card-border-radius: 12px;
-
-/**
- * Form check
- */
-$form-check-input-width: 1.125em;
-
-/**
- * Tables
- */
-$table-cell-padding-y: 10px;
-$table-cell-padding-x: 10px;
-$table-th-font-weight: 600;
-$table-color: $gray-600;
-
-/**
- * Checkbox
- */
-// $form-check-input-width: 1em;
-
-/**
  * Utilities
+ * -----------------------------------------------------
  */
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/utilities";
 
-// Font-weigth utility
 $utilities: map-merge(
 	$utilities,
 	(
@@ -265,6 +221,6 @@ $utilities: map-merge(
 				75: 75%,
 				100: 100%,
 			)
-		),
+		)
 	)
 );
