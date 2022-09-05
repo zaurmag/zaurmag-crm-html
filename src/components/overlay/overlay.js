@@ -9,6 +9,7 @@ export function overlayAdd() {
 
 	return overlay
 }
+
 export function overlayRemove() {
 	const overlay = document.querySelector('.overlay')
 	overlay.remove()

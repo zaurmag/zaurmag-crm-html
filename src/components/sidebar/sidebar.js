@@ -3,7 +3,7 @@ import {overlayAdd, overlayRemove} from '../overlay/overlay'
 import {tooltip} from '../../vendor/bootstrap/js/tooltip'
 
 const body = document.body
-const btn = document.querySelector('.header__sb-collapse--js')
+const btn = document.querySelector('.js-sb-collapse')
 let isActive = false
 
 enquire.register('screen and (max-width: 992px)', {
@@ -20,7 +20,7 @@ btn.addEventListener('click', (event) => {
 	if (isActive) {
 		event.target.classList.add('is-active')
 		event.target.dataset.bsOriginalTitle = 'Развернуть'
-		body.classList.add('is-active')
+		body.classList.add('is-sb-collapsed')
 
 		enquire.register('screen and (max-width: 992px)', {
 			match() {
@@ -34,7 +34,7 @@ btn.addEventListener('click', (event) => {
 
 	function remove() {
 		isActive = false
-		body.classList.remove('is-active')
+		body.classList.remove('is-sb-collapsed')
 		event.target.classList.remove('is-active')
 
 		enquire.register('screen and (min-width: 992px)', {

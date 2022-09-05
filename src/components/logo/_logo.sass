@@ -1,11 +1,28 @@
 .logo
+    $self: &
+
     &__link
         align-items: center
-        color: $white
         display: inline-flex
-        font-size: 22px
-        font-weight: 800
+        font-size: 24px
+        font-weight: 700
         text-decoration: none
+        color: $blue-300
 
-        &:hover
-            color: darken($white, 15%)
+        @include media-breakpoint-up(lg)
+            &:hover
+                color: darken($blue-300, 15%)
+
+                #{$self}
+                    &__img
+                        opacity: 0.8
+
+    &__text
+        margin-left: 15px
+
+    &__img
+        width: 30px
+        height: 30px
+
+        @include media-breakpoint-up(lg)
+            transition: opacity .3s ease
