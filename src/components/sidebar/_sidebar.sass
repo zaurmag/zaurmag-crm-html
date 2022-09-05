@@ -14,7 +14,7 @@
 		transform: translateX(-100%)
 		transition: transform .2s ease
 
-		.is-active &,
+		.is-sb-collapsed &,
 		&.is-compact
 			transform: translateX(0)
 			transition: transform .2s ease
@@ -22,22 +22,78 @@
 	@include media-breakpoint-up(lg)
 		transition: width .2s ease
 
-		.is-active &,
+		.is-sb-collapsed &,
 		&.is-compact
 			width: 80px
 			transition: width .2s ease
 
-	// Logo
-	&__logo
-		padding-top: 10px
-		padding-bottom: 10px
+	// Collapse button
+	&__collapse-btn
+		position: absolute
+		right: 0
+		top: 10px
+		display: flex
+		align-items: center
+		justify-content: center
+		text-decoration: none
+		color: $white
+		transform: translateX(50%)
+		border: 1px solid rgba($white, 0.3)
+		width: 38px
+		height: 38px
+		background-color: #192b58
 
 		@include media-breakpoint-up(lg)
-			.is-active &,
+			transition: background-color .3s ease
+
+			&:hover
+				background-color: $blue-600
+
+		@include media-breakpoint-down(lg)
+			transform: translateX(calc(100% + 10px))
+
+		.icon
+			font-size: 15px
+			pointer-events: none
+
+			&-arrow-bar-right
+				display: block
+				@include media-breakpoint-up(lg)
+					display: none
+
+			@include media-breakpoint-down(lg)
+				&-arrow-bar-left
+					display: none
+
+		&.is-active,
+		.is-full &
+			.icon
+				&-arrow-bar-left
+					display: block
+
+				&-arrow-bar-right
+					display: none
+
+				@include media-breakpoint-up(lg)
+					&-arrow-bar-right
+						display: block
+
+					&-arrow-bar-left
+						display: none
+
+	// Logo
+	&__logo
+		padding: 12px 1rem
+
+		@include media-breakpoint-up(lg)
+			.is-sb-collapsed &,
 			.is-compact &
 				text-align: center
+				padding-left: 0
+				padding-right: 0
 
 				.icon
+					font-size: 28px
 					margin-right: 0 !important
 
 				.logo__text

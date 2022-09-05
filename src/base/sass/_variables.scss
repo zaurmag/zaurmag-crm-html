@@ -1,15 +1,9 @@
-// Font
+/**
+ * Font
+ * ---------------------------------------------
+ */
 $font-family-base: "Open sans", sans-serif;
 $enable-smooth-scroll: false;
-
-// Links
-//$link-color: $blue;
-//$link-decoration:                         none;
-//$link-hover-color:                        darken($link-color, 15%);
-//$link-hover-decoration:                   underline;
-// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-//$emphasized-link-hover-darken-percentage: 15%;
-
 
 /**
  * Spacing
@@ -36,8 +30,6 @@ $spacers: (
 	90: ($spacer * 5.625), // 90px
 	100: ($spacer * 6.25) // 100px
 );
-
-// $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
 
 /*
  * Color system
@@ -124,13 +116,19 @@ $theme-colors: (
  * Buttons
  * --------------------------------------
  */
-//$btn-border-radius: 0;
-//$btn-border-radius-lg: 0;
-//$btn-border-radius-sm: 0;
+// $btn-border-radius: 0;
+// $btn-border-radius-lg: 0;
+// $btn-border-radius-sm: 0;
 
 $btn-font-size: 14px;
 $btn-font-size-sm: 12px;
 $btn-font-size-lg: 18px;
+
+/**
+ * Shadow
+ * ---------------------------------------------
+ */
+$box-shadow-sm-soft: 0 4px 10px rgba($dark, .075);
 
 /**
  * Utilities
@@ -138,6 +136,7 @@ $btn-font-size-lg: 18px;
  */
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/maps";
 @import "../../../node_modules/bootstrap/scss/utilities";
 
 $utilities: map-merge(
@@ -189,6 +188,17 @@ $utilities: map-merge(
 				75: 75%,
 				100: 100%,
 			)
+		),
+		"shadow": (
+			property: box-shadow,
+			class: shadow,
+			values: (
+				null: $box-shadow,
+				sm: $box-shadow-sm,
+				sm-soft: $box-shadow-sm-soft,
+				lg: $box-shadow-lg,
+				none: none,
+			)
 		)
 	)
 );
@@ -197,10 +207,10 @@ $utilities: map-merge(
  * Cards
  * ---------------------------------------------
  */
-$card-cap-bg: rgba($gray-100, 0.5);
+$card-cap-bg: rgba($gray-100, 0.3);
 $card-cap-padding-y: 15px;
 $card-cap-padding-x: 20px;
-$card-border-color: $gray-200;
+$card-border-color: rgba($gray-200, 0.95);
 $card-spacer-x: 20px;
 $card-spacer-y: 15px;
 
@@ -209,9 +219,17 @@ $card-spacer-y: 15px;
  * ---------------------------------------------
  */
 $font-size-base: 14px;
+$body-color: $dark;
 
 /**
  * Breadcrumb
  * ---------------------------------------------
  */
 $breadcrumb-margin-bottom: 30px;
+
+/**
+ * Forms
+ * ---------------------------------------------
+ */
+$input-font-size: 14px;
+$form-label-font-weight: 500;

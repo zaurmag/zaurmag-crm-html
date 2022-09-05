@@ -1,4 +1,13 @@
 aside#sidebarMenu.sidebar
+    button.btn-round.p-0.sidebar__collapse-btn.js-sb-collapse(
+        type="button"
+        data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        data-bs-title="Свернуть"
+    )
+        +icon("arrow-bar-left")
+        +icon("arrow-bar-right")
+
     .logo.sidebar__logo
         include ../logo/logo
 

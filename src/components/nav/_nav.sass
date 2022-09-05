@@ -1,8 +1,9 @@
 .nav
-	font-size: 14px
-
 	.nav-item
-		margin-bottom: 5px
+		margin-bottom: 8px
+
+	.nav-text
+		margin-left: 15px
 
 	.nav-link
 		color: #96a2c1
@@ -18,14 +19,22 @@
 				color: $white
 
 	@include media-breakpoint-up(lg)
-		.is-active &,
+		.is-sb-collapsed &,
 		.is-compact &
 			text-align: center
 
 			.nav-text
 				display: none
 
+			.nav-item
+				margin-bottom: 0
+
+				&:not(:last-child)
+					margin-bottom: 30px
+
 			.nav-link
+				padding: 0
+
 				.icon
-					font-size: 24px
+					font-size: 28px
 					margin-right: 0 !important

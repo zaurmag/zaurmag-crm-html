@@ -10,14 +10,12 @@
 	left: 0
 	z-index: 1021
 
-	&.is-active
+	&.is-overlay-active
 		visibility: visible
 		opacity: 1
 		transition: all .2s ease
 
-body
-	&.is-animate
-		.overlay
-			visibility: visible
-			opacity: 1
-			transition: all .2s ease
+	.is-overlay-animate &
+		visibility: visible
+		opacity: 1
+		transition: all .2s ease

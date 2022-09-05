@@ -2,47 +2,12 @@
 	align-items: center
 	background-color: $white
 	border-bottom: 1px solid $gray-200
-	padding: 10px 15px
 	display: grid
 	grid-template-columns: auto auto
 	justify-content: space-between
+
 	@include media-breakpoint-up(lg)
 		padding: 13px 30px
-
-	&__sb-collapse
-		color: $gray-600
-		display: block
-		text-decoration: none
-		padding: 10px
-
-		.icon
-			font-size: 24px
-			pointer-events: none
-
-			&-arrow-bar-right
-				display: block
-				@include media-breakpoint-up(lg)
-					display: none
-
-			@include media-breakpoint-down(lg)
-				&-arrow-bar-left
-					display: none
-
-		&.is-active,
-		.is-full &
-			.icon
-				&-arrow-bar-left
-					display: block
-
-				&-arrow-bar-right
-					display: none
-
-				@include media-breakpoint-up(lg)
-					&-arrow-bar-right
-						display: block
-
-					&-arrow-bar-left
-						display: none
 
 	&__right
 		padding-top: 10px
@@ -64,3 +29,8 @@
 			border-radius: 50%
 			overflow: hidden
 			width: 32px
+
+	@include media-breakpoint-down(lg)
+		padding-left: 65px
+		padding-right: 15px
+		min-height: 60px

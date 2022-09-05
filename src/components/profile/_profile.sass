@@ -5,7 +5,7 @@
         align-items: flex-end
         justify-content: center
         border-radius: 10px
-        background-color: $blue-100
+        background-color: $blue-400
 
     &__edit
         position: absolute
@@ -14,6 +14,14 @@
 
         .btn
             font-size: 13px
+
+            @include media-breakpoint-down(lg)
+                padding: 0
+                height: 40px
+                width: 40px
+
+                .icon
+                    font-size: 18px
 
     &__short-info
         transform: translateY(40%)
@@ -32,6 +40,14 @@
             width: 100%
             height: 100%
 
+        &-edit
+            position: absolute
+            right: 0
+            bottom: 0
+            padding: 0
+            width: 38px
+            height: 38px
+
         &-indicator
             position: absolute
             right: 0
@@ -49,7 +65,7 @@
         margin-top: 100px
 
     &__contact
-        color: $dark
+        line-height: 1.65
 
         &-item
             display: flex
