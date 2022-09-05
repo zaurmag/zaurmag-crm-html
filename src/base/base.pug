@@ -20,12 +20,8 @@ html(lang="ru")
 				include ../components/header/header
 
 				main.main
-					if(!isFrontpage)
-						nav.breadcrumb.fz-12
-							li.breadcrumb-item
-								a(href="/") Главная
-
-							li.breadcrumb-item.active= title
+					if !isFrontpage
+						include ../components/breadcrumb/breadcrumb
 
 					block main
 
