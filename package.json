@@ -1,7 +1,7 @@
 {
-  "name": "gulp-pack",
+  "name": "zm-crm",
   "version": "1.0.0",
-  "description": "My starter project for web development",
+  "description": "Zaurmag CRM html project",
   "main": "gulpfile.js",
   "scripts": {
     "Start": "gulp default",
@@ -68,7 +68,7 @@
     "gulp-webp": "^4.0.1",
     "gulp-zip": "latest",
     "gulp.spritesmith": "latest",
-    "sass": "latest",
+    "node-sass": "latest",
     "vinyl-ftp": "latest",
     "webpack": "latest",
     "webpack-stream": "latest",

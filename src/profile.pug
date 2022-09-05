@@ -1,0 +1,50 @@
+extends ./base/base
+
+append variables
+	- var title = 'Страница профиля пользователя'
+
+block main
+	.row.justify-content-center
+		.col-md-10
+			.profile
+				header.profile__header
+					.profile__edit
+						a.btn.btn-outline-primary(href="/edit-profile")
+							+icon("pencil-square")
+							| Редактировать
+
+					.profile__short-info
+						.profile__avatar
+							img.profile__avatar-img(src="./images/zaurmag.png" alt="Заур Магомедов")
+							span.profile__avatar-indicator.indicator.indicator--xl.bg-success
+
+						h2.h5.profile__name Заур Магомедов
+
+				.profile__content
+					.row
+						.col-md-4
+							.card.shadow-sm.h-100
+								header.card-header
+									h3.h6.m-0.card-header-title Контактная информация
+
+								.card-body
+									ul.profile__contact
+										li.profile__contact-item
+											+icon("building")
+											| г. Каспийск, рес. Дагестан
+
+										li.profile__contact-item
+											+icon("phone")
+											a.is-transition(href="tel:+79064495544") + 7 (906) 449-55-44
+
+										li.profile__contact-item
+											+icon("envelope")
+											a.is-transition(href="mailto:demo@zaurmag.ru") demo@zaurmag.ru
+						.col-md-8
+							.card.shadow-sm.h-100
+								header.card-header
+									h3.h6.m-0.card-header-title О себе
+
+								.card-body
+									p Я программист - фронтенд-разработчик. Работаю удаленно в IT-компании. Постоянно учусь и развиваюсь в своей сфере. Здесь без этого нельзя. Веду свой блог #[a(href="https://zaurmag.ru" target="_blank") zaurmag.ru].
+									p Женат, имею троих детей - девочки. Все они школьники.

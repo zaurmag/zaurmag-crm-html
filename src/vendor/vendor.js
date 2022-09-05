@@ -1,5 +1,5 @@
 // Bootstrap
-import './bootstrap/bootstrap'
+// import './bootstrap/bootstrap'
 
 // Select
 import './select/select-init'
