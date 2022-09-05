@@ -15,6 +15,14 @@
         .btn
             font-size: 13px
 
+            @include media-breakpoint-down(lg)
+                padding: 0
+                height: 40px
+                width: 40px
+
+                .icon
+                    font-size: 18px
+
     &__short-info
         transform: translateY(40%)
         text-align: center

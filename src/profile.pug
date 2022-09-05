@@ -5,13 +5,13 @@ append variables
 
 block main
 	.row.justify-content-center
-		.col-lg-10
+		.col-xxl-10
 			.profile
 				header.profile__header
 					.profile__edit
 						a.btn.btn-outline-primary(href="/edit-profile")
-							+icon("pencil-square").me-2
-							| Редактировать
+							+icon("pencil-square").me-lg-2
+							span.d-none.d-lg-inline Редактировать
 
 					.profile__short-info
 						.profile__avatar
@@ -21,8 +21,8 @@ block main
 						h2.h5.profile__name Заур Магомедов
 
 				.profile__content
-					.row
-						.col-md-4
+					.row.gy-25.gy-lg-0
+						.col-xl-4.col-md-5
 							.card.shadow-sm.h-100
 								header.card-header
 									h3.h6.m-0.card-header-title Контактная информация
@@ -40,7 +40,8 @@ block main
 										li.profile__contact-item
 											+icon("envelope")
 											a.is-transition(href="mailto:demo@zaurmag.ru") demo@zaurmag.ru
-						.col-md-8
+
+						.col-xl-8.col-md-7
 							.card.shadow-sm.h-100
 								header.card-header
 									h3.h6.m-0.card-header-title О себе
