@@ -1,0 +1,12 @@
+mixin card($title, $footer)
+    .card.shadow-sm-soft&attributes(attributes)
+        if $title
+            .card-header
+                h3.h6.m-0.card-header-title!= $title
+
+        if block
+            .card-body
+                block
+
+        if $footer
+            .card-footer!= $footer

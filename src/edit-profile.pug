@@ -2,60 +2,68 @@ extends ./base/base
 
 append variables
 	- var title = 'Профиль пользователя'
+	- var page = 'edit-profile'
 
 block main
 	.row.justify-content-center
 		.col-xxl-10
 			.profile
-				header.profile__header
+				header.profile__header(style="background-image: url('./images/profile/header.jpg')")
 					.profile__edit
-						a.btn.btn-outline-light.py-2(href="/edit-profile")
+						button.btn.btn-light.py-2(
+							type="button"
+							data-bs-toggle="modal"
+							data-bs-target="#uploadFile"
+						)
 							+icon("image").me-lg-2
 							span.d-none.d-lg-inline Загрузить картинку
 
 					.profile__short-info
 						.profile__avatar
 							img.profile__avatar-img(src="./images/zaurmag.png" alt="Заур Магомедов")
-							button.btn.btn-light.rounded-circle.profile__avatar-edit(type="button")
+							button.btn.btn-light.rounded-circle.profile__avatar-edit(
+								type="button"
+								data-bs-toggle="modal"
+								data-bs-target="#uploadFile"
+							)
 								+icon("pencil")
 
 						h2.h5.profile__name Заур Магомедов
 
 				.profile__content
-					.row.justify-content-center
-						.col-xxl-6.col-lg-9.col-md-8
-							form
-								.row
-									.col-md-6
-										.mb-3
-											label.form-label(for="name") Имя
-											input.form-control.py-2#name(type="text" value="Заур Магомедов")
+					form
+						.row.gy-25.gy-lg-0
+							.col-md-6
+								+card('Основная информация').h-100
+									.mb-3
+										label.form-label(for="name") Имя
+										input.form-control.py-2#name(type="text" value="Заур Магомедов")
 
-										.mb-3
-											label.form-label(for="email") E-mail
-											input.form-control.py-2#email(type="email" value="demo@zaurmag.ru")
+									.mb-3
+										label.form-label(for="email") E-mail
+										input.form-control.py-2#email(type="email" value="demo@zaurmag.ru")
 
-										.mb-3
-											label.form-label(for="phone") Телефон
-											input.form-control.py-2#phone(type="text" value="+7 (906) 449-55-44")
+									.mb-3
+										label.form-label(for="phone") Телефон
+										input.form-control.py-2#phone(type="text" value="+7 (906) 449-55-44")
 
-									.col-md-6
-										.mb-3
-											label.form-label(for="password") Пароль
-											input.form-control.py-2#password(type="password")
+							.col-md-6
+								+card('Сменить пароль').h-100
+									.mb-3
+										label.form-label(for="password") Пароль
+										input.form-control.py-2#password(type="password")
 
-										.mb-3
-											label.form-label(for="password2") Повторить пароль
-											input.form-control.py-2#password2(type="password")
+									.mb-3
+										label.form-label(for="password2") Повторить пароль
+										input.form-control.py-2#password2(type="password")
 
-								.mb-3
-									label.form-label О себе
-									textarea.form-control.py-2.d-none(cols="10" rows="5")
+						.my-4
+							label.form-label О себе
+							textarea.form-control.py-2.d-none(cols="10" rows="5")
 
-									.w-editor
-										.w-editor__container#editor
-											p Я программист - фронтенд-разработчик. Работаю удаленно в IT-компании. Постоянно учусь и развиваюсь в своей сфере. Здесь без этого нельзя. Веду свой блог zaurmag.ru.
-											p Женат, имею троих детей - девочки. Все они школьники.
+							.w-editor
+								.w-editor__container#editor
+									p Я программист - фронтенд-разработчик. Работаю удаленно в IT-компании. Постоянно учусь и развиваюсь в своей сфере. Здесь без этого нельзя. Веду свой блог zaurmag.ru.
+									p Женат, имею троих детей - девочки. Все они школьники.
 
-
-								button.btn.btn-primary.py-2.px-3(type="submit") Сохранить
+						button.btn.btn-primary.py-2.px-3(type="submit") Сохранить
