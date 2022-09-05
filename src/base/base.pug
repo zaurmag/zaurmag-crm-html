@@ -31,8 +31,13 @@ html(lang="ru")
 		.d-none
 			include ../../dist/images/sprite.svg
 
-		//- Include modal form
-		include ../components/form/form--add
+		//- Include modal form Add record
+		if isFrontpage
+			include ../components/form/form--add
+
+		//- Include modal upload file
+		if page === 'edit-profile'
+			include ../components/f-upload/f-upload
 
 		//- Confirm
 		+modal('confirm', 'Вы действительно хотите удалить?', 'Данную операцию отменить будет не возможно!', true)

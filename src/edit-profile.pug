@@ -2,6 +2,7 @@ extends ./base/base
 
 append variables
 	- var title = 'Профиль пользователя'
+	- var page = 'edit-profile'
 
 block main
 	.row.justify-content-center
@@ -9,21 +10,29 @@ block main
 			.profile
 				header.profile__header
 					.profile__edit
-						a.btn.btn-outline-light.py-2(href="/edit-profile")
+						button.btn.btn-outline-light.py-2(
+							type="button"
+							data-bs-toggle="modal"
+							data-bs-target="#uploadFile"
+						)
 							+icon("image").me-lg-2
 							span.d-none.d-lg-inline Загрузить картинку
 
 					.profile__short-info
 						.profile__avatar
 							img.profile__avatar-img(src="./images/zaurmag.png" alt="Заур Магомедов")
-							button.btn.btn-light.rounded-circle.profile__avatar-edit(type="button")
+							button.btn.btn-light.rounded-circle.profile__avatar-edit(
+								type="button"
+								data-bs-toggle="modal"
+								data-bs-target="#uploadFile"
+							)
 								+icon("pencil")
 
 						h2.h5.profile__name Заур Магомедов
 
 				.profile__content
 					.row.justify-content-center
-						.col-xxl-6.col-lg-9.col-md-8
+						.col-xxl-8.col-lg-9.col-md-8
 							form
 								.row
 									.col-md-6
