@@ -1,15 +1,9 @@
-// Font
+/**
+ * Font
+ * ---------------------------------------------
+ */
 $font-family-base: "Open sans", sans-serif;
 $enable-smooth-scroll: false;
-
-// Links
-//$link-color: $blue;
-//$link-decoration:                         none;
-//$link-hover-color:                        darken($link-color, 15%);
-//$link-hover-decoration:                   underline;
-// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-//$emphasized-link-hover-darken-percentage: 15%;
-
 
 /**
  * Spacing
@@ -36,8 +30,6 @@ $spacers: (
 	90: ($spacer * 5.625), // 90px
 	100: ($spacer * 6.25) // 100px
 );
-
-// $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
 
 /*
  * Color system
@@ -124,9 +116,9 @@ $theme-colors: (
  * Buttons
  * --------------------------------------
  */
-//$btn-border-radius: 0;
-//$btn-border-radius-lg: 0;
-//$btn-border-radius-sm: 0;
+// $btn-border-radius: 0;
+// $btn-border-radius-lg: 0;
+// $btn-border-radius-sm: 0;
 
 $btn-font-size: 14px;
 $btn-font-size-sm: 12px;
@@ -207,7 +199,7 @@ $utilities: map-merge(
 				lg: $box-shadow-lg,
 				none: none,
 			)
-		),
+		)
 	)
 );
 
@@ -234,3 +226,10 @@ $body-color: $dark;
  * ---------------------------------------------
  */
 $breadcrumb-margin-bottom: 30px;
+
+/**
+ * Forms
+ * ---------------------------------------------
+ */
+$input-font-size: 14px;
+$form-label-font-weight: 500;
