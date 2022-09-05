@@ -138,6 +138,7 @@ $btn-font-size-lg: 18px;
  */
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/maps";
 @import "../../../node_modules/bootstrap/scss/utilities";
 
 $utilities: map-merge(
@@ -209,6 +210,7 @@ $card-spacer-y: 15px;
  * ---------------------------------------------
  */
 $font-size-base: 14px;
+$body-color: $dark;
 
 /**
  * Breadcrumb

@@ -1,16 +1,16 @@
 extends ./base/base
 
 append variables
-	- var title = 'Страница профиля пользователя'
+	- var title = 'Профиль пользователя'
 
 block main
 	.row.justify-content-center
-		.col-md-10
+		.col-lg-10
 			.profile
 				header.profile__header
 					.profile__edit
 						a.btn.btn-outline-primary(href="/edit-profile")
-							+icon("pencil-square")
+							+icon("pencil-square").me-2
 							| Редактировать
 
 					.profile__short-info
