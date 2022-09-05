@@ -1,5 +1,5 @@
 import enquire from 'enquire.js'
-import {overlayAdd, overlayRemove} from '../overlay/overlay'
+import overlay from '../overlay/overlay'
 import {tooltip} from '../../vendor/bootstrap/js/tooltip'
 
 const body = document.body
@@ -9,23 +9,30 @@ let isActive = false
 enquire.register('screen and (max-width: 992px)', {
 	match() {
 		btn.dataset.bsOriginalTitle = 'Развернуть'
+		tooltip[0].disable()
 	},
+	unmatch() {
+		tooltip[0].enable()
+	}
 })
 
 btn.addEventListener('click', (event) => {
-	event.preventDefault()
-	isActive = !isActive
 	tooltip[0].hide()
+	isActive = !isActive
 
 	if (isActive) {
 		event.target.classList.add('is-active')
-		event.target.dataset.bsOriginalTitle = 'Развернуть'
+		event.target.dataset.bsTitle = 'Развернуть'
 		body.classList.add('is-sb-collapsed')
 
 		enquire.register('screen and (max-width: 992px)', {
 			match() {
-				const overlay = overlayAdd()
-				overlay.addEventListener('click', remove)
+				overlay.show()
+				document.addEventListener('click', (event) => {
+					if (event.target.classList.contains('overlay')) {
+						remove()
+					}
+				})
 			},
 		})
 	} else {
@@ -39,14 +46,13 @@ btn.addEventListener('click', (event) => {
 
 		enquire.register('screen and (min-width: 992px)', {
 			match() {
-				event.target.dataset.bsOriginalTitle = 'Свернуть'
+				event.target.dataset.bsTitle = 'Свернуть'
+				tooltip[0].update()
 			}
 		})
 
 		enquire.register('screen and (max-width: 992px)', {
-			match() {
-				overlayRemove()
-			}
+			match: overlay.hide
 		})
 	}
 })
