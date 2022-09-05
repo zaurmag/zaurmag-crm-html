@@ -133,6 +133,12 @@ $btn-font-size-sm: 12px;
 $btn-font-size-lg: 18px;
 
 /**
+ * Shadow
+ * ---------------------------------------------
+ */
+$box-shadow-sm-soft: 0 4px 10px rgba($dark, .075);
+
+/**
  * Utilities
  * -----------------------------------------------------
  */
@@ -190,7 +196,18 @@ $utilities: map-merge(
 				75: 75%,
 				100: 100%,
 			)
-		)
+		),
+		"shadow": (
+			property: box-shadow,
+			class: shadow,
+			values: (
+				null: $box-shadow,
+				sm: $box-shadow-sm,
+				sm-soft: $box-shadow-sm-soft,
+				lg: $box-shadow-lg,
+				none: none,
+			)
+		),
 	)
 );
 
@@ -198,10 +215,10 @@ $utilities: map-merge(
  * Cards
  * ---------------------------------------------
  */
-$card-cap-bg: rgba($gray-100, 0.5);
+$card-cap-bg: rgba($gray-100, 0.3);
 $card-cap-padding-y: 15px;
 $card-cap-padding-x: 20px;
-$card-border-color: $gray-200;
+$card-border-color: rgba($gray-200, 0.95);
 $card-spacer-x: 20px;
 $card-spacer-y: 15px;
 
