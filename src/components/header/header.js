@@ -40,13 +40,13 @@ btn.addEventListener('click', (event) => {
 		enquire.register('screen and (min-width: 992px)', {
 			match() {
 				event.target.dataset.bsOriginalTitle = 'Свернуть'
-			},
+			}
 		})
 
 		enquire.register('screen and (max-width: 992px)', {
 			match() {
 				overlayRemove()
-			},
+			}
 		})
 	}
 })

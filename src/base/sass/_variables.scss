@@ -1,38 +1,6 @@
 // Font
-$font-family-base: "Roboto", sans-serif;
+$font-family-base: "Open sans", sans-serif;
 $enable-smooth-scroll: false;
-
-/**
- * Grid system
- * -----------------------------------------
- */
-
-// Grid breakpoints
-$grid-breakpoints: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1400px
-);
-
-// Grid containers
-$container-max-widths: (
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1140px,
-	xxl: 1320px
-);
-
-// Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
-
-$grid-columns:                12;
-$grid-gutter-width:           1.5rem;
-$grid-row-columns:            6;
 
 // Links
 //$link-color: $blue;
@@ -160,9 +128,9 @@ $theme-colors: (
 //$btn-border-radius-lg: 0;
 //$btn-border-radius-sm: 0;
 
-//$btn-font-size: 0.875rem;
-//$btn-font-size-sm: 0.875rem;
-//$btn-font-size-lg: 1.125rem;
+$btn-font-size: 14px;
+$btn-font-size-sm: 12px;
+$btn-font-size-lg: 18px;
 
 /**
  * Utilities
@@ -224,3 +192,20 @@ $utilities: map-merge(
 		)
 	)
 );
+
+/**
+ * Cards
+ * ---------------------------------------------
+ */
+$card-cap-bg: rgba($gray-100, 0.5);
+$card-cap-padding-y: 15px;
+$card-cap-padding-x: 20px;
+$card-border-color: $gray-200;
+$card-spacer-x: 20px;
+$card-spacer-y: 15px;
+
+/**
+ * Body
+ * ---------------------------------------------
+ */
+$font-size-base: 14px;
