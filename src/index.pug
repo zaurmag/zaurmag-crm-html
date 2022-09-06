@@ -8,13 +8,13 @@ block main
 	//- Page header
 	header.main__header
 		h1.h4.main__header-tlt Главная панель
-		button.main__add-btn.btn.btn-primary.px-md-3.ms-auto(
+		button.main__add-btn.btn.btn-primary.shadow-sm-soft(
 			type="button"
 			data-bs-toggle="modal"
 			data-bs-target="#addRecordForm"
 		)
-			span.d-sm-inline.d-none Добавить
-			+icon("plus-lg", " ms-sm-1")
+			+icon("pencil-square").me-sm-2
+			span.d-sm-inline.d-none Добавить запись
 
 	//- Records list
 	include ./components/card/card--records-list

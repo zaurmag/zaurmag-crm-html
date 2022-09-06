@@ -1,28 +1,46 @@
-.form.form--filter.row.align-items-end.gy-2
+.form.form--filter.row.gy-3.gy-xl-2.gx-4.mt-xl-0.mt-3
 	.col-xl-auto
-		.row.align-items-center.g-3.g-lg-0
-			.col-sm-2.col-md-auto
-				label.form__label.me-3(for="filterDateFrom") Период:
+		.d-lg-flex.align-items-center
+			//- label.form__label.me-3(for="filterDateFrom") Период:
+			select#filterSelectPeriod
+				option(value="today") Сегодня
+				option(value="yesterday") Вчера
+				option(value="week") Неделя
+				option(value="month") Месяц
+				option(value="quarter") Квартал
+				option(value="year") Год
 
-			.col-sm-5.col-md-auto.d-flex.align-items-center
-				label.text-secondary.me-2 от:
-				input#filterDateFrom.form__control(type="date")
+			.dropdown.ms-lg-2.mt-2.mt-lg-0
+				button.btn.btn-light(type="button" data-bs-toggle="dropdown")
+					+icon("calendar3")
+					span.ms-2 Произвольно
 
-			.col-sm-5.col-md-auto.d-flex.align-items-center
-				label.form__label.me-2(for="filterDateTo") до:
-				input#filterDateTo.form__control(type="date")
+				.dropdown-menu.p-3
+					.d-flex.align-items-center
+						label.text-secondary.me-2 от:
+						input#filterDateFrom.form__control(type="date")
+
+					.d-flex.align-items-center
+						label.form__label.me-2(for="filterDateTo") до:
+						input#filterDateTo.form__control(type="date")
 
 	.col-xl-auto
 		.d-flex.align-items-center
 			label.form__label.me-3 Тип операции:
-			select#filterSelectType.select--js
+			select#filterSelectType
 				option(value="all") Все
 				option(value="income") Приход
 				option(value="outcome") Расход
 
-	.col-xl
-		.form__group.form__group--icon
-			+icon("search")
-			input.form__control(type="search" placeholder="Поиск по наименованию")
+	.col-xl-auto
+		.d-flex.align-items-center
+			.form__group.form__group--icon.w-100
+				+icon("search")
+				input.form__control(type="search" placeholder="Поиск по наименованию")
 
-		// button.btn.btn-sm.btn-outline-primary.ms-3(type="button") Сбросить
+			button.btn.btn-outline-secondary.btn-round.fz-16.ms-3.p-0(
+				type="button"
+				data-bs-toggle="tooltip"
+				title="Сбросить фильтр"
+			)
+				+icon("x")
