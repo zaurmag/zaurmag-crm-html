@@ -1,0 +1,76 @@
+extends ./base/base
+
+append variables
+	- var title = 'Список пользователей'
+	- var pageId = 'users'
+	- var pageUrl = getPageUrl(pageId)
+
+block main
+	//- Page header
+	header.main__header
+		h1.h4.main__header-tlt Пользователи
+
+		button.main__add-btn.btn.btn-primary.shadow-sm-soft(
+			type="button"
+			data-bs-toggle="modal"
+			data-bs-target="#addUserForm"
+		)
+			+icon("person-plus").fz-18.me-sm-2
+			span.d-sm-inline.d-none Добавить пользователя
+
+	//- User list
+	.card.shadow-sm-soft.mb-30
+		header.card-header
+			.row.align-items-center
+				.col-xxl.mb-0.mb-xl-2.mb-xxl-0.d-flex.align-items-center.justify-content-between
+					button.btn.btn-light.fz-18.p-2.d-xl-none.ms-auto(type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false")
+						+icon("filter")
+
+				#filter.col-xxl-auto.collapse.d-xl-block
+					include ./components/form/form--users-filter
+
+		.table-responsive
+			table.table.align-middle.table-borderless.card-table.mb-0
+				thead.table-light
+					tr
+						th.table-cell-check
+							.form-check
+								input.form-check-input.float-none(type="checkbox" value="")
+
+						th #
+						th ФИО
+						th Дата регистрации
+						th.no-wrap Статус
+						th.no-wrap Роль
+						th(style="width: 40px") Действия
+
+				tbody
+					- var i = 1
+					while i <= 5
+						tr
+							td
+								.form-check
+									input.form-check-input.float-none(type="checkbox" value="")
+							td= i
+							td(style="min-width: 215px")
+								.d-flex.align-items-center
+									img.img-thumbnail.rounded-circle.me-3(src="../images/zaurmag.png" width="40")
+									span.fw-semibold.text-dark Заур Магомедов
+							td 02.06.20221
+							td
+								if (i > 2 && i < 6)
+									span.indicator.bg-success.me-2
+									| Активен
+								else
+									span.indicator.bg-secondary.me-2
+									| Не активен
+							td Пользователь
+
+							td(style="min-width: 140px")
+								button.btn.btn-light.fz-12.px-2(type="button")
+									+icon("pencil")
+						- i++
+
+		footer.card-footer
+			//- Pagination
+			include ./components/pagination/pagination

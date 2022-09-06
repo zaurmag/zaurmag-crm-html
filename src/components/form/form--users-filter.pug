@@ -1,0 +1,37 @@
+.form.form--filter.row.gy-3.gy-xl-2.gx-4.mt-xl-0.mt-3
+	.col-xl-auto
+		.d-lg-flex.align-items-center
+			.dropdown.ms-lg-2.mt-2.mt-lg-0
+				button.btn.btn-light(type="button" data-bs-toggle="dropdown")
+					+icon("calendar3")
+					span.ms-2 Дата регистрации
+
+				.dropdown-menu.p-3
+					.d-flex.align-items-center
+						label.text-secondary.me-2 от:
+						input#filterDateFrom.form__control(type="date")
+
+					.d-flex.align-items-center
+						label.form__label.me-2(for="filterDateTo") до:
+						input#filterDateTo.form__control(type="date")
+
+	.col-xl-auto
+		.d-flex.align-items-center
+			label.form__label.me-3 Статус:
+			select#filterSelectType
+				option(value="all") Все
+				option(value="income") Активен
+				option(value="outcome") Не активен
+
+	.col-xl-auto
+		.d-flex.align-items-center
+			.form__group.form__group--icon.w-100
+				+icon("search")
+				input.form__control(type="search" placeholder="Поиск по имени")
+
+			button.btn.btn-outline-secondary.btn-round.fz-16.ms-3.p-0(
+				type="button"
+				data-bs-toggle="tooltip"
+				title="Сбросить фильтр"
+			)
+				+icon("x")

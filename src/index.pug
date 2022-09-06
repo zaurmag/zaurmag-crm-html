@@ -2,7 +2,8 @@ extends ./base/base
 
 append variables
 	- var title = 'Система учета доходов/расходов по проектам'
-	- var isFrontpage = true
+	- var pageId = 'home'
+	- var pageUrl = getPageUrl(pageId)
 
 block main
 	//- Page header
