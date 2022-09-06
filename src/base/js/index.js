@@ -1,5 +1,5 @@
 // Vendor
-// import '../../vendor/vendor'
+import '../../vendor/vendor'
 
 // Components
 import '../../components/components'

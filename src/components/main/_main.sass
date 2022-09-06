@@ -1,5 +1,6 @@
 .main
 	padding: 15px
+
 	@include media-breakpoint-up(lg)
 		padding: 30px
 
@@ -10,16 +11,21 @@
 		justify-content: space-between
 		padding-bottom: 15px
 		margin-bottom: 20px
+
 		@include media-breakpoint-up(lg)
 			margin-bottom: 40px
-			padding-bottom: 30px
+			padding-bottom: 20px
 
 		&-tlt
 			font-weight: 600
 			margin-bottom: 0
 
-	@include media-breakpoint-down(md)
-		&__add-btn
+	&__add-btn
+		padding-left: 20px
+		padding-right: 20px
+		height: 45px
+
+		@include media-breakpoint-down(md)
 			border-radius: 50%
 			position: fixed
 			right: 20px

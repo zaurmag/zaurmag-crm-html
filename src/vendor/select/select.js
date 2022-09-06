@@ -14,7 +14,7 @@ const getTemplate = (data = [], placeholder, selectedID = null) => {
 	})
 
 	return `
-		<div class="select__text" data-type="text">${text}</div>
+		<div class="select__text btn btn-light" data-type="text">${text}</div>
 		<div class="select__dropdown">
 			<ul class="select__list shadow-sm">
 				${items.join('')}

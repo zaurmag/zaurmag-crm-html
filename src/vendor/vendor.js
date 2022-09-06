@@ -2,4 +2,4 @@
 // import './bootstrap/bootstrap'
 
 // Select
-import './select/select-init'
+import './select/init'
