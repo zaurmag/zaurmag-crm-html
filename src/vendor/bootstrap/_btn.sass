@@ -4,5 +4,22 @@
     justify-content: center
     line-height: normal
 
+    &:hover
+        border-color: transparent
+
     &-round
         border-radius: 50%
+
+    &-primary,
+    &-success,
+    &-danger
+        color: $white
+
+        &:hover
+            color: $white
+
+    &-outline-primary,
+    &-outline-danger,
+    &-outline-success
+        &:hover
+            color: $white
