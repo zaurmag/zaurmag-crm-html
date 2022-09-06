@@ -1,8 +1,9 @@
-mixin card($title, $footer)
+mixin card($title, $footer, options = {})
+    - var headerClass = options.headerTag || 'h6'
     .card.shadow-sm-soft&attributes(attributes)
         if $title
             .card-header
-                h3.h6.m-0.card-header-title!= $title
+                h3.m-0.card-header-title(class= headerClass)!= $title
 
         if block
             .card-body

@@ -5,12 +5,13 @@ append variables
 
 block main
 	.row.justify-content-center
-		.col-md-5
-			.card.shadow-sm
-				header.card-header.text-center
-					h1.h3.mb-0 Регистрация пользователя
+		.col-md-4
+			+logo("wallet-gray.png", "/").logo--dark.logo--lg.mb-15.text-center
 
+			.card.shadow-sm-soft
 				.card-body.p-lg-30
+					h1.h4.text-center.mb-25 Регистрация
+
 					form(action="#")
 						.mb-3
 							label.form-label(for="name") Ваше имя

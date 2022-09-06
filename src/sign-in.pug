@@ -5,29 +5,32 @@ append variables
 
 block main
 	.row.justify-content-center
-		.col-md-5
-			.card.shadow-sm
-				header.card-header.text-center
-					h1.h3.mb-0 Авторизация
+		.col-md-4
+			+logo("wallet-gray.png", "/").logo--dark.logo--lg.mb-15.text-center
 
-				.card-body.p-lg-30
+			.card.shadow-sm-soft
+				.card-body.p-lg-40
+					h1.h4.text-center.mb-25 Авторизация
+
 					form(action="#")
 						.mb-3
 							label.form-label(for="email") E-mail
 							input#email.form-control.form-control-lg(type="email" placeholder="email@address.com")
 
 						.mb-3
-							label.form-label(for="password") Пароль
+							label.form-label.w-100.d-flex.justify-content-between(for="password")
+								span Пароль
+								a.text-decoration-none.fw-semibold(href="/forgot-pass.html") Забыли пароль?
+
 							.form__password
 								input#password.form-control.form-control-lg(type="password" placeholder="Не менее 6-ти знаков")
 								a.form__password-toggle.pass-toggle--js(href="#")
 									+icon("eye")
 
-
 						button.btn.btn-primary.btn-lg.w-100(type="submit") Войти
 
-					.text-secondary.fz-14.mt-4.text-center
+					.text-secondary.mt-4.text-center
 						a.text-decoration-none(href="/sign-up.html") Зарегистрируйтесь
 						| ,
-						| если у вас нет еще учетной записи.
+						| если нет учетной записи.
 

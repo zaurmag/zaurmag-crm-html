@@ -112,17 +112,24 @@ $theme-colors: (
 	"dark":       $dark
 );
 
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/utilities";
+
 /**
  * Buttons
  * --------------------------------------
  */
 $btn-border-radius: 5px;
-// $btn-border-radius-lg: 0;
-// $btn-border-radius-sm: 0;
+$btn-border-radius-lg: 6px;
+$btn-border-radius-sm: 4px;
 
 $btn-font-size: 14px;
 $btn-font-size-sm: 12px;
-$btn-font-size-lg: 18px;
+$btn-font-size-lg: 16px;
+
+$btn-padding-y-lg: 11.5px;
 
 /**
  * Shadow
@@ -131,20 +138,66 @@ $btn-font-size-lg: 18px;
 $box-shadow-sm-soft: 0 4px 10px rgba($dark, .075);
 
 /**
+ * Cards
+ * ---------------------------------------------
+ */
+$card-cap-bg: rgba($gray-100, 0.3);
+$card-cap-padding-y: 15px;
+$card-cap-padding-x: 20px;
+$card-border-color: rgba($gray-200, 0.95);
+$card-spacer-x: 20px;
+$card-spacer-y: 15px;
+
+/**
+ * Body
+ * ---------------------------------------------
+ */
+$font-size-base: 14px;
+$body-color: $dark;
+
+/**
+ * Breadcrumb
+ * ---------------------------------------------
+ */
+$breadcrumb-margin-bottom: 30px;
+
+/**
+ * Forms
+ * ---------------------------------------------
+ */
+$input-font-size: 14px;
+$input-font-size-lg: 14px;
+$input-border-radius-lg: 5px;
+$input-padding-y-lg: 12px;
+$input-border-color: $gray-300;
+
+$form-label-font-weight: 500;
+$form-check-input-border-radius: 0.175em;
+
+/**
+ * Tables
+ * ---------------------------------------------
+ */
+$table-cell-padding-x: 15px;
+$table-cell-padding-y: 10px;
+
+/**
+ * Tooltips
+ * ---------------------------------------------
+ */
+$tooltip-font-size: 12px;
+
+/**
  * Utilities
  * -----------------------------------------------------
  */
-@import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/maps";
-@import "../../../node_modules/bootstrap/scss/utilities";
 
 $utilities: map-merge(
 	$utilities,
 	(
 		// Font weight
 		"font-weight": map-merge(
-				map-get($utilities, "font-weight"),
+			map-get($utilities, "font-weight"),
 			(
 				values: map-merge(
 					map-get(map-get($utilities, "font-weight"), "values"),
@@ -202,48 +255,3 @@ $utilities: map-merge(
 		)
 	)
 );
-
-/**
- * Cards
- * ---------------------------------------------
- */
-$card-cap-bg: rgba($gray-100, 0.3);
-$card-cap-padding-y: 15px;
-$card-cap-padding-x: 20px;
-$card-border-color: rgba($gray-200, 0.95);
-$card-spacer-x: 20px;
-$card-spacer-y: 15px;
-
-/**
- * Body
- * ---------------------------------------------
- */
-$font-size-base: 14px;
-$body-color: $dark;
-
-/**
- * Breadcrumb
- * ---------------------------------------------
- */
-$breadcrumb-margin-bottom: 30px;
-
-/**
- * Forms
- * ---------------------------------------------
- */
-$input-font-size: 14px;
-$form-label-font-weight: 500;
-$form-check-input-border-radius: 0.175em;
-
-/**
- * Tables
- * ---------------------------------------------
- */
-$table-cell-padding-x: 15px;
-$table-cell-padding-y: 10px;
-
-/**
- * Tooltips
- * ---------------------------------------------
- */
-$tooltip-font-size: 12px;
