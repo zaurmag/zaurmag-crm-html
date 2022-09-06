@@ -1,4 +1,5 @@
 include ../mixins/pug/index
+include ./pug/utils
 
 block variables
 	-
@@ -31,11 +32,15 @@ html(lang="ru")
 			include ../../dist/images/sprite.svg
 
 		//- Include modal form Add record
-		if isFrontpage
+		if pageId === 'home'
 			include ../components/form/form--add
 
+		//- Include modal form Add new user
+		if pageId === 'users'
+			include ../components/form/form--add-user
+
 		//- Include modal upload file
-		if page === 'edit-profile'
+		if pageId === 'edit-profile'
 			include ../components/f-upload/f-upload
 
 		//- Confirm
