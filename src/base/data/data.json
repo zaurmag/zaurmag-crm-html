@@ -1,46 +1,28 @@
 {
-  "mainmenuData": [
+  "dataSidebarNav": [
     {
+      "id": "home",
       "text": "Главная",
+      "icon": "speedometer2",
       "link": "/"
     },
     {
-      "text": "Пункт 2",
-      "link": "#",
-      "subitems": [
-        {
-          "text": "Подпункт 1",
-          "link": "#"
-        },
-        {
-          "text": "Подпункт 2",
-          "link": "#"
-        },
-        {
-          "text": "Подпункт 3",
-          "link": "#"
-        },
-        {
-          "text": "Подпункт 4",
-          "link": "#"
-        },
-        {
-          "text": "Подпункт 5",
-          "link": "#"
-        }
-      ]
+      "id": "users",
+      "text": "Пользователи",
+      "icon": "people",
+      "link": "/users.html"
     },
     {
-      "text": "Пункт 3",
-      "link": "#"
+      "id": "auth",
+      "text": "Авторизация",
+      "icon": "box-arrow-in-left",
+      "link": "/sign-in.html"
     },
     {
-      "text": "Пункт 4",
-      "link": "#"
-    },
-    {
-      "text": "Пункт 5",
-      "link": "#"
+      "id": "register",
+      "text": "Регистрация",
+      "icon": "box-arrow-in-left",
+      "link": "/sign-up.html"
     }
   ]
 }
