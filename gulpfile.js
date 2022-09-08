@@ -59,6 +59,7 @@ $.gulp.task('build', $.gulp.series(
 
 $.gulp.task('default', $.gulp.series(
 	'build',
+	'copy',
 	$.gulp.parallel(
 		// 'critical:build',
 		'watch',
