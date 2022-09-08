@@ -1,5 +1,6 @@
 module.exports = {
 	path: {
+		copyPath: 'D:/zm-projects/zaurmag-crm-vue/src/assets/',
 		build: { // Build files
 			root: 'dist/',
 			style: 'dist/css',
