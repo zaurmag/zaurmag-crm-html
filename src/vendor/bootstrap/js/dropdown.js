@@ -1,4 +1,4 @@
-import {Dropdown} from 'bootstrap'
+import { Dropdown } from 'bootstrap'
 
 // const dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
 const dropdownElementList = Array.from(document.querySelectorAll('.dropdown-toggle'))
