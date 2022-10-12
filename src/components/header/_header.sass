@@ -11,6 +11,14 @@
 		min-height: 65px
 
 	@include media-breakpoint-down(lg)
-		padding-left: 65px
+		padding-left: 58px
 		padding-right: 15px
 		min-height: 60px
+
+		&__user-dropdown
+			.btn
+				span
+					width: 50px
+					text-overflow: ellipsis
+					overflow: hidden
+					white-space: nowrap
