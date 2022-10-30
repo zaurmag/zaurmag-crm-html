@@ -17,7 +17,8 @@ module.exports = function () {
 			$.gulp.watch(path.path.src.svgIcons, $.gulp.series('spriteSvg:build', ftp))
 			$.gulp.watch(path.path.src.resources, $.gulp.series('resources:build', ftp))
 		} else {
-			$.gulp.watch(path.path.watch.style, { usePolling: true }, $.gulp.series('style:build'))
+			const copy = 'copy'
+			$.gulp.watch(path.path.watch.style, { usePolling: true }, $.gulp.series('style:build', copy))
 			$.gulp.watch(path.path.src.js, { usePolling: true }, $.gulp.series('js:build'))
 			$.gulp.watch([path.path.src.img, '!src/images/icons/**/*'], { usePolling: true }, $.gulp.series('img:build'))
 			$.gulp.watch(path.path.src.imgComp, { usePolling: true }, $.gulp.series('img:build'))

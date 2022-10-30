@@ -24,6 +24,32 @@
       "icon": "box-arrow-in-left",
       "link": "/sign-up.html"
     }
+  ],
+  "dataEditProfileNav": [
+    {
+      "id": "mainInfo",
+      "text": "Основная информация",
+      "icon": "person",
+      "link": "#"
+    },
+    {
+      "id": "changePass",
+      "text": "Сменить пароль",
+      "icon": "key",
+      "link": "#"
+    },
+    {
+      "id": "settings",
+      "text": "Настройки",
+      "icon": "gear",
+      "link": "#"
+    },
+    {
+      "id": "deleteAccount",
+      "text": "Удалить аккаунт",
+      "icon": "trash",
+      "link": "#"
+    }
   ]
 }
 

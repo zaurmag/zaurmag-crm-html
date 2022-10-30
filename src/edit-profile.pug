@@ -1,7 +1,7 @@
 extends ./base/base
 
 append variables
-	- var title = 'Профиль пользователя'
+	- var title = 'Редактирование профиля пользователя'
 	- var pageId = 'edit-profile'
 
 block main
@@ -31,10 +31,27 @@ block main
 						h2.h5.profile__name Заур Магомедов
 
 				.profile__content
-					form
-						.row.gy-25.gy-lg-0
-							.col-md-6
-								+card('Основная информация').h-100
+					.row.gy-lg-0.gy-4
+						.col-lg-4
+							+card
+								nav.profile__nav
+									ul.nav.nav-pills.flex-column
+										each item, idx in dataEditProfileNav
+											li.nav-item
+												button.nav-link.w-100(
+													type="button"
+													data-bs-toggle="tab"
+													data-bs-target= `#${item.id}`
+													role="tab"
+													class=[idx === 0 && 'active']
+												)
+													+icon(item.icon)
+													span.nav-text= item.text
+
+						// Основная информация
+						.tab-content.col-lg-8.col-12
+							.tab-pane.active(role="tabpanel" id= dataEditProfileNav[0].id)
+								+card('Основная информация')
 									.mb-3
 										label.form-label(for="name") Имя
 										input.form-control.py-2#name(type="text" value="Заур Магомедов")
@@ -43,27 +60,49 @@ block main
 										label.form-label(for="email") E-mail
 										input.form-control.py-2#email(type="email" value="demo@zaurmag.ru")
 
-									.mb-3
+									.mb-4
 										label.form-label(for="phone") Телефон
 										input.form-control.py-2#phone(type="text" value="+7 (906) 449-55-44")
 
-							.col-md-6
-								+card('Сменить пароль').h-100
-									.mb-3
-										label.form-label(for="password") Пароль
-										input.form-control.py-2#password(type="password")
+									.mb-4
+										label.form-label(for="address") Адрес
+										input.form-control.py-2#address(type="text" value="г. Каспийск")
 
-									.mb-3
-										label.form-label(for="password2") Повторить пароль
-										input.form-control.py-2#password2(type="password")
+									p.form-label О себе
+									.w-editor.mb-4
+										.w-editor__container#editor
+											p Я программист - фронтенд-разработчик. Работаю удаленно в IT-компании. Постоянно учусь и развиваюсь в своей сфере. Здесь без этого нельзя. Веду свой блог zaurmag.ru.
+											p Женат, имею троих детей - девочки. Все они школьники.
 
-						.my-4
-							label.form-label О себе
-							textarea.form-control.py-2.d-none(cols="10" rows="5")
+									button.btn.btn-primary.py-2.px-3(type="submit") Сохранить
 
-							.w-editor
-								.w-editor__container#editor
-									p Я программист - фронтенд-разработчик. Работаю удаленно в IT-компании. Постоянно учусь и развиваюсь в своей сфере. Здесь без этого нельзя. Веду свой блог zaurmag.ru.
-									p Женат, имею троих детей - девочки. Все они школьники.
+							// Сменить пароль
+							.tab-pane(role="tabpanel" id= dataEditProfileNav[1].id)
+								+card('Сменить пароль')
+									.mw-lg-50
+										.mb-3
+											label.form-label(for="password") Пароль
+											input.form-control.py-2#password(type="password")
 
-						button.btn.btn-primary.py-2.px-3(type="submit") Сохранить
+										.mb-4
+											label.form-label(for="password2") Повторить пароль
+											input.form-control.py-2#password2(type="password")
+
+										button.btn.btn-primary.py-2.px-3(type="submit") Сохранить
+
+							// Настройки
+							.tab-pane.h-100(role="tabpanel" id= dataEditProfileNav[2].id)
+								+card('Настройки').h-100
+
+							// Удалить аккаунт
+							.tab-pane(role="tabpanel" id= dataEditProfileNav[3].id)
+								+card('Удалить аккаунт')
+									p Вы действительно хотите удалить свою учетную запись? Операцию нельзя будет отменить!
+
+									form(action="#")
+										.mb-4.mw-lg-50
+											label.form-label Введите слово "DELETE" для подтверждения
+											input.form-control(type="text")
+
+										.text-end
+											button.btn.btn-danger.px-3(type="submit") Удалить
