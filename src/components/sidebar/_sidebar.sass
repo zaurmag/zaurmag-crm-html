@@ -100,3 +100,37 @@
 
 				.logo__text
 					display: none
+
+	// Nav
+	&__nav
+		.nav
+			.nav-link
+				color: #96a2c1
+
+				&.is-active
+					color: $white
+
+				&:hover
+					&:not(.active)
+						color: $white
+
+			@include media-breakpoint-up(lg)
+				.is-sb-collapsed &,
+				.is-compact &
+					text-align: center
+
+					.nav-text
+						display: none
+
+					.nav-item
+						margin-bottom: 0
+
+						&:not(:last-child)
+							margin-bottom: 30px
+
+					.nav-link
+						padding: 0
+
+						.icon
+							font-size: 26px
+							margin-right: 0 !important

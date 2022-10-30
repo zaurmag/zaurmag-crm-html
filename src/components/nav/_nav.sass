@@ -1,42 +1,20 @@
 .nav
 	.nav-item
-		margin-bottom: 8px
+		&:not(:last-child)
+			margin-bottom: 8px
 
 	.nav-text
 		margin-left: 15px
 
 	.nav-link
 		display: flex
-		align-items: center
-		color: #96a2c1
+		color: $black
 
 		.icon
+			margin-top: 3px
+			flex-shrink: 0
 			font-size: 16px
-
-		&.is-active
-			color: $white
 
 		&:hover
 			&:not(.active)
-				color: $white
-
-	@include media-breakpoint-up(lg)
-		.is-sb-collapsed &,
-		.is-compact &
-			text-align: center
-
-			.nav-text
-				display: none
-
-			.nav-item
-				margin-bottom: 0
-
-				&:not(:last-child)
-					margin-bottom: 30px
-
-			.nav-link
-				padding: 0
-
-				.icon
-					font-size: 26px
-					margin-right: 0 !important
+				color: $primary

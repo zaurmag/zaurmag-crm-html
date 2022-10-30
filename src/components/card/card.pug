@@ -6,7 +6,7 @@ mixin card($title, $footer, options = {})
                 h3.m-0.card-header-title(class= headerClass)!= $title
 
         if block
-            .card-body
+            .card-body(class= options.bodyClassList)
                 block
 
         if $footer
