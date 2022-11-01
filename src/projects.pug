@@ -1,0 +1,25 @@
+extends ./base/base
+
+append variables
+	- var title = 'Проекты - система учета доходов/расходов'
+	- var pageId = 'projects'
+	- var pageUrl = getPageUrl(pageId)
+
+block main
+	//- Page header
+	header.main__header
+		h1.h4.main__header-tlt Проекты
+		button.main__add-btn.btn.btn-primary.shadow-sm-soft(
+			type="button"
+			data-bs-toggle="modal"
+			data-bs-target="#addRecordForm"
+		)
+			+icon("pencil-square").me-sm-2
+			span.d-sm-inline.d-none Добавить запись
+
+	//- Records list
+	include ./components/card/card--records-list
+
+	.row.gy-30
+		.col-xl-6.offset-xl-6
+			include ./components/card/card--report

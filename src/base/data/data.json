@@ -7,6 +7,12 @@
       "link": "/"
     },
     {
+      "id": "projects",
+      "text": "Проекты",
+      "icon": "card-list",
+      "link": "/projects.html"
+    },
+    {
       "id": "users",
       "text": "Пользователи",
       "icon": "people",
@@ -21,7 +27,7 @@
     {
       "id": "register",
       "text": "Регистрация",
-      "icon": "box-arrow-in-left",
+      "icon": "person-plus",
       "link": "/sign-up.html"
     }
   ],
