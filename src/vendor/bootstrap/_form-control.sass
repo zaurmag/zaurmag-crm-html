@@ -1,4 +1,19 @@
-.form-control-dark
-    background-color: rgba($white, .1)
-    border-color: rgba($white, .1)
-    color: $white
+.form-control
+    &-dark
+        background-color: rgba($white, .1)
+        border-color: rgba($white, .1)
+        color: $white
+
+    &-password
+        position: relative
+
+        input
+            padding-right: 35px
+
+    &-toggle
+        color: $gray-800
+        font-size: 16px
+        position: absolute
+        top: 50%
+        right: 20px
+        transform: translateY(-50%)
