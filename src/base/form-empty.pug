@@ -1,0 +1,24 @@
+include ../mixins/pug/index
+include ./pug/utils
+
+block variables
+	-
+		var baseDir = './';
+
+doctype html
+html(lang="ru")
+	//- Include head
+	include ./pug/head
+
+	body.bg-light
+		.page.page--empty.page--login
+			.container.py-5
+				.row.justify-content-center
+					.col-xxl-4.col-xl-5.col-lg-6.col-md-7
+						block main
+
+		.d-none
+			include ../../dist/images/sprite.svg
+
+		script(src=`${baseDir}js/main.js`)
+		block script

@@ -1,44 +1,41 @@
-extends ./base/empty
+extends ./base/form-empty
 
 append variables
 	- var title = 'Авторизация'
 
 block main
-	.row.justify-content-center
-		.col-md-4
-			+logo("wallet-gray.png", "/").logo--dark.logo--lg.mb-20.justify-content-center
+	+logo("wallet-gray.png", "/").logo--dark.logo--lg.mb-20.justify-content-center
 
-			.card.shadow-sm-soft
-				.card-body.p-lg-40
-					h1.h4.text-center.mb-25 Регистрация
+	.card.shadow-sm-soft
+		.card-body.p-lg-40
+			h1.h4.text-center.mb-25 Регистрация
 
-					form(action="#")
-						.mb-3
-							label.form-label(for="name") Ваше имя
-							input#name.form-control.form-control-lg(type="text" placeholder="Например, Иван")
+			form(action="#")
+				.mb-3
+					label.form-label(for="name") Ваше имя
+					input#name.form-control.form-control-lg(type="text" placeholder="Например, Иван")
 
-						.mb-3
-							label.form-label(for="email") Ваш E-mail
-							input#email.form-control.form-control-lg(type="email" placeholder="email@address.com")
+				.mb-3
+					label.form-label(for="email") Ваш E-mail
+					input#email.form-control.form-control-lg(type="email" placeholder="email@address.com")
 
-						.mb-3
-							label.form-label(for="password") Пароль
-							.form__password
-								input#password.form-control.form-control-lg(type="password" placeholder="Не менее 6-ти знаков")
-								a.form__password-toggle.pass-toggle--js(href="#")
-									+icon("eye")
+				.mb-3
+					label.form-label(for="password") Пароль
+					.form__password
+						input#password.form-control.form-control-lg(type="password" placeholder="Не менее 6-ти знаков")
+						a.form__password-toggle.pass-toggle--js(href="#")
+							+icon("eye")
 
-						.mb-3
-							label.form-label(for="password2") Подтвердите пароль
-							.form__password
-								input#password2.form-control.form-control-lg(type="password" placeholder="Не менее 6-ти знаков")
-								a.form__password-toggle.pass-toggle--js(href="#")
-									+icon("eye")
+				.mb-3
+					label.form-label(for="password2") Подтвердите пароль
+					.form__password
+						input#password2.form-control.form-control-lg(type="password" placeholder="Не менее 6-ти знаков")
+						a.form__password-toggle.pass-toggle--js(href="#")
+							+icon("eye")
 
-						button.btn.btn-primary.btn-lg.w-100(type="submit") Создать аккаунт
+				button.btn.btn-primary.btn-lg.w-100(type="submit") Создать аккаунт
 
-					.text-secondary.fz-14.mt-4.text-center
-						a.text-decoration-none(href="/sign-in.html") Войдите
-						| ,
-						| если вы уже зарегистрированы.
-
+			.text-secondary.fz-14.mt-4.text-center
+				a.text-decoration-none(href="/sign-in.html") Войдите
+				| ,
+				| если вы уже зарегистрированы.

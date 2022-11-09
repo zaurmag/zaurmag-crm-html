@@ -1,36 +1,36 @@
-extends ./base/empty
+extends ./base/form-empty
 
 append variables
 	- var title = 'Авторизация'
 
 block main
-	.row.justify-content-center
-		.col-md-4
-			+logo("wallet-gray.png", "/").logo--dark.logo--lg.mb-20.justify-content-center
+	+logo("wallet-gray.png", "/").logo--dark.logo--lg.mb-20.justify-content-center
 
-			.card.shadow-sm-soft
-				.card-body.p-lg-40
-					h1.h4.text-center.mb-25 Авторизация
+	.card.shadow-sm-soft
+		.card-body.p-lg-40
+			h1.h4.text-center.mb-25 Авторизация
 
-					form(action="#")
-						.mb-3
-							label.form-label(for="email") E-mail
-							input#email.form-control.form-control-lg(type="email" placeholder="email@address.com")
+			form(action="#")
+				.mb-3
+					label.form-label(for="email") E-mail
+					input#email.form-control.form-control-lg(type="email" placeholder="email@address.com")
 
-						.mb-3
-							label.form-label.w-100.d-flex.justify-content-between(for="password")
-								span Пароль
-								a.text-decoration-none.fw-semibold(href="/forgot-pass.html") Забыли пароль?
+				.mb-3
+					label.form-label.w-100.d-flex.justify-content-between(for="password")
+						span Пароль
+						a.text-decoration-none.fw-semibold(href="/forgot-password.html") Забыли пароль?
 
-							.form__password
-								input#password.form-control.form-control-lg(type="password" placeholder="Не менее 6-ти знаков")
-								a.form__password-toggle.pass-toggle--js(href="#")
-									+icon("eye")
+					.form__password
+						input#password.form-control.form-control-lg(type="password" placeholder="Не менее 6-ти знаков")
+						a.form__password-toggle.pass-toggle--js(href="#")
+							+icon("eye")
 
-						button.btn.btn-primary.btn-lg.w-100(type="submit") Войти
+				button.btn.btn-primary.btn-lg.w-100(type="submit") Войти
 
-					.text-secondary.mt-4.text-center
-						a.text-decoration-none(href="/sign-up.html") Зарегистрируйтесь
-						| ,
-						| если нет учетной записи.
+			.text-secondary.mt-4.text-center
+				a.text-decoration-none(href="/sign-up.html") Зарегистрируйтесь
+				| ,
+				| если нет учетной записи.
+
+			.text-secondary.mt-2.text-center Или войдите, как #[a(href="#") демо-пользователь].
 
