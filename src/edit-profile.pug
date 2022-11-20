@@ -9,6 +9,13 @@ block main
 		.col-xxl-10
 			.profile
 				header.profile__header(style="background-image: url('./images/profile/header.jpg')")
+					.profile__back-profile
+						a.btn.btn-light.py-2(
+							href="/profile.html"
+						)
+							+icon("box-arrow-in-left").me-lg-2
+							span.d-none.d-lg-inline Вернуться в профиль
+
 					.profile__edit
 						button.btn.btn-light.py-2(
 							type="button"
