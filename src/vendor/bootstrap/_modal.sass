@@ -1,0 +1,7 @@
+.modal
+  $self: &
+
+  @include media-breakpoint-up(sm)
+    &.mw-600
+      #{$self}-dialog
+        max-width: 600px
