@@ -6,17 +6,18 @@ mixin modal(id, title, content, footer)
 		.modal-dialog.modal-dialog-centered
 			.modal-content
 				.modal-header.px-20
-					h5.h6.modal-title= title
+					if title
+						h5.h6.modal-title= title
 					button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
 
 				if block
 					.modal-body.p-20
 						block
 
-				if (content)
+				if content
 					.modal-body.px-20= content
 
-				if (footer)
+				if footer
 					.modal-footer.px-20.text-center
 						button.btn.btn-primary(type="button") Ok
 						button.btn.btn-secondary(type="button" data-bs-dismiss="modal") Отмена

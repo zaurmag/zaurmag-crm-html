@@ -1,0 +1,77 @@
+extends ./base/base
+
+append variables
+	- var title = 'Платеж по коммунальным - 09.10.2022 г.'
+
+block main
+	//- Page header
+	header.main__header
+		h1.h4.main__header-tlt= title
+		.d-flex.align-items-center
+			button.btn.btn-primary.px-3(
+				type="button"
+				data-bs-toggle="modal"
+				data-bs-target="#addRecordForm"
+			)
+				+icon("pencil-square").me-sm-2
+				span.d-sm-inline.d-none Редактировать
+
+			button.btn.btn-outline-danger.px-3.ms-10(
+				type="button"
+				data-bs-toggle="modal"
+				data-bs-target="#confirm"
+			)
+				+icon("trash")
+				span.ms-1.d-none.d-lg-inline Удалить
+
+	.card.shadow-sm-soft
+		.card-body.p-sm-30
+			.table-responsive
+				table.table.table-lg.mb-30
+					thead
+						tr
+							th(scope="col") Показания
+							th(scope="col") Электричество, квт/ч
+							th(scope="col") Газ, м#[sup 3]
+							th(scope="col") Вода, м#[sup 3]
+							th(scope="col") Сумма
+
+					tbody
+						tr
+							th(scope="row") предыдущие
+							td 1 400
+							td 1 800
+							td 650
+							td 2 000 ₽
+
+						tr
+							th(scope="row") текущие
+							td 1 500
+							td 1 900
+							td 665
+							td #[span.fz-18.fw-medium 3 300 ₽]
+
+						tr
+							th(scope="row") разница
+							td 100
+							td 700
+							td 15
+							td 1 300 ₽
+
+			//- Description cols
+			.row
+				.col-sm
+					p #[strong Описание]
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque commodi corporis dicta doloribus ea error hic ipsam labore laboriosam libero molestiae nesciunt, placeat quae quia quod reprehenderit sed voluptatum.
+
+				.col-sm
+					p #[strong Фото квитанции]
+					button.btn.btn-empty.p-0(type="button" data-bs-toggle="modal" data-bs-target="#openModalImage")
+						img.img-fluid(src="./images/foto-zhkh.jpg" alt="Фото квитанции ЖКХ")
+
+append endBody
+	include ./components/form/form--add-zhkh
+
+	//- Modal image
+	+modal('openModalImage').modal-xl
+		img.img-fluid.w-100(src="./images/foto-zhkh.jpg" alt="Фото квитанции ЖКХ")
