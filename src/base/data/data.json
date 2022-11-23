@@ -13,6 +13,12 @@
       "link": "/projects.html"
     },
     {
+      "id": "zhkh",
+      "text": "Платежи ЖКХ",
+      "icon": "house",
+      "link": "/zhkh-payments.html"
+    },
+    {
       "id": "users",
       "text": "Пользователи",
       "icon": "people",
