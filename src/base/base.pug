@@ -31,20 +31,9 @@ html(lang="ru")
 		.d-none
 			include ../../dist/images/sprite.svg
 
-		//- Include modal form Add record
-		if pageId === 'home'
-			include ../components/form/form--add
-
-		//- Include modal form Add new user
-		if pageId === 'users'
-			include ../components/form/form--add-user
-
-		//- Include modal upload file
-		if pageId === 'edit-profile'
-			include ../components/f-upload/f-upload
-
 		//- Confirm
 		+modal('confirm', 'Вы действительно хотите удалить?', 'Данную операцию отменить будет не возможно!', true)
 
-		script(src=`${baseDir}js/main.js`)
+		block endBody
 		block script
+			script(src=`${baseDir}js/main.js`)

@@ -113,3 +113,7 @@ block main
 
 										.text-end
 											button.btn.btn-danger.px-3(type="submit") Удалить
+
+append endBody
+	+modal('uploadFile', 'Загрузить файл', '', true)
+		+fUpload
