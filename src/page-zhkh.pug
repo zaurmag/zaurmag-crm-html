@@ -6,7 +6,12 @@ append variables
 block main
 	//- Page header
 	header.main__header
-		h1.h4.main__header-tlt= title
+		.d-flex.align-items-center
+			h1.h4.main__header-tlt= title
+			.ms-30
+				span.indicator.indicator--lg.bg-success.me-10
+				span.fz-16 Оплачено
+
 		.d-flex.align-items-center
 			button.btn.btn-primary.px-3(
 				type="button"
@@ -46,9 +51,9 @@ block main
 
 						tr
 							th(scope="row") текущие
-							td 1 500
-							td 1 900
-							td 665
+							td #[span.fz-18.fw-medium 1 500]
+							td #[span.fz-18.fw-medium 1 900]
+							td #[span.fz-18.fw-medium 665]
 							td #[span.fz-18.fw-medium 3 300 ₽]
 
 						tr
@@ -75,3 +80,6 @@ append endBody
 	//- Modal image
 	+modal('openModalImage').modal-xl
 		img.img-fluid.w-100(src="./images/foto-zhkh.jpg" alt="Фото квитанции ЖКХ")
+
+	//- Confirm
+	+modal('confirm', 'Вы действительно хотите удалить?', 'Данную операцию отменить будет не возможно!', true)

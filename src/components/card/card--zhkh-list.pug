@@ -33,6 +33,7 @@
 					th Газ
 					th Вода
 					th Сумма
+					th(style="width: 150px") Статус
 					th(style="width: 150px") Действие
 
 			tbody
@@ -43,11 +44,15 @@
 							.form-check
 								input.form-check-input.float-none(type="checkbox" value="")
 						td= i
-						td 09.10.2022 г.
+						td
+							a.table-cell-title-link.is-transition(href="/page-zhkh.html") 09.10.2022 г.
 						td 1 400 квт/ч
 						td 1 800 м#[sup 3]
 						td 650 м#[sup 3]
 						td 3 300 ₽
+						td
+							span.indicator.bg-success.me-2
+							| Оплачено
 						td
 							a.btn.btn-outline-primary.btn-sm.py-1.fz-12(href="/page-zhkh.html") Подробнее
 							button.btn.text-danger.ms-1.fz-16.p-1(

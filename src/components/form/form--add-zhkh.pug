@@ -1,6 +1,12 @@
 +modal("addRecordForm", "Добавить показания счетчиков").modal-lg
 	form(action='#')
-		p.h4.mb-3 Предыдущие:
+		.row.mb-3.justify-content-between
+			p.h4.col Предыдущие:
+			.col-auto
+				.form-check.form-switch
+					input.form-check-input#status(type="checkbox" role="switch")
+					label.form-check-label(for="status") Не оплачено
+
 		.row.g-15.mb-30
 			.col-sm
 				label.form-label(for="addRecordElPrev") Электричество
