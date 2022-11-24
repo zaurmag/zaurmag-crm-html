@@ -1,7 +1,7 @@
-+modal('uploadFile', 'Загрузить файл', '', true)
-    .f-upload
+mixin fUpload
+    .f-upload&attributes(attributes)
         .f-upload__area
             +icon("image").f-upload__image
             h5.h6.f-upload__title Перетащите файл сюда
             p.f-upload__desc или
-            span.btn.btn-primary Загрузите
+            span.btn.btn-primary.btn-sm.px-3 Загрузите

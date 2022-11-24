@@ -1,0 +1,59 @@
++modal("addRecordForm", "Добавить показания счетчиков").modal-lg
+	form(action='#')
+		.row.mb-3.justify-content-between
+			p.h4.col Предыдущие:
+			.col-auto
+				.form-check.form-switch
+					input.form-check-input#status(type="checkbox" role="switch")
+					label.form-check-label(for="status") Не оплачено
+
+		.row.g-15.mb-30
+			.col-sm
+				label.form-label(for="addRecordElPrev") Электричество
+				input#addRecordElPrev.form-control.form-control-lg(type="number" value="14000" disabled)
+
+			.col-sm
+				label.form-label(for="addRecordGasPrev") Газ
+				input#addRecordGasPrev.form-control.form-control-lg(type="number" value="850" disabled)
+
+			.col-sm
+				label.form-label(for="addRecordWaterPrev") Вода
+				input#addRecordWaterPrev.form-control.form-control-lg(type="number" value="500" disabled)
+
+		p.h4.mb-3 Новые:
+		.row.g-15.mb-30
+			.col-sm
+				label.form-label(for="addRecordEl") Электричество
+				input#addRecordEl.form-control.form-control-lg(type="number" value="0")
+
+			.col-sm
+				label.form-label(for="addRecordGas") Газ
+				input#addRecordGas.form-control.form-control-lg(type="number" value="0")
+
+			.col-sm
+				label.form-label(for="addRecordWater") Вода
+				input#addRecordWater.form-control.form-control-lg(type="number" value="0")
+
+		p.h4.mb-3 Разница:
+		.row.mb-30
+			.col-sm
+				span.fz-18 500
+				hr.my-2
+			.col-sm
+				span.fz-18 200
+				hr.my-2
+			.col-sm
+				span.fz-18 15
+				hr.my-2
+
+		.row.g-15.mb-3
+			.col-sm
+				p.form-label Прикрепить фото квитанции
+				+fUpload
+
+			.col-sm.d-flex.flex-column
+				label.form-label(for="addRecordDescr") Описание
+				textarea.form-control.form-control-lg.h-100#addRecordDescr
+
+		.text-center
+			button.btn.btn-primary.w-100.px-3(type="submit") Сохранить

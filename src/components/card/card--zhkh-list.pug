@@ -1,0 +1,68 @@
+.card.shadow-sm-soft.mb-30
+	header.card-header
+		.row.align-items-center
+			.col-xxl.mb-0.mb-xl-2.mb-xxl-0.d-flex.align-items-center.justify-content-between
+				.d-flex.align-items-center
+					p.text-secondary.m-0 Отмечено: 5
+					button.btn.btn-outline-danger.btn-sm.ms-3(type="button")
+						+icon("trash")
+						span.ms-1.d-none.d-lg-inline Удалить
+
+				button.btn.btn-light.fz-18.p-2.d-xl-none(
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#filter"
+					aria-expanded="false"
+				)
+					+icon("filter")
+
+			#filter.col-xxl-auto.collapse.d-xl-block
+				include ../form/form--filter-zhkh
+
+	.table-responsive
+		table.table.align-middle.table-borderless.card-table.mb-0
+			thead.table-light
+				tr
+					th.table-cell-check
+						.form-check
+							input.form-check-input.float-none(type="checkbox" value="")
+
+					th #
+					th Дата платежа
+					th Электр.
+					th Газ
+					th Вода
+					th Сумма
+					th(style="width: 150px") Статус
+					th(style="width: 150px") Действие
+
+			tbody
+				- var i = 1
+				while i <= 5
+					tr
+						td
+							.form-check
+								input.form-check-input.float-none(type="checkbox" value="")
+						td= i
+						td
+							a.table-cell-title-link.is-transition(href="/page-zhkh.html") 09.10.2022 г.
+						td 1 400 квт/ч
+						td 1 800 м#[sup 3]
+						td 650 м#[sup 3]
+						td 3 300 ₽
+						td
+							span.indicator.bg-success.me-2
+							| Оплачено
+						td
+							a.btn.btn-outline-primary.btn-sm.py-1.fz-12(href="/page-zhkh.html") Подробнее
+							button.btn.text-danger.ms-1.fz-16.p-1(
+								type="button"
+								data-bs-toggle="tooltip"
+								data-bs-title="Удалить"
+							)
+								+icon("trash")
+					- i++
+
+	footer.card-footer
+		//- Pagination
+		include ../pagination/pagination

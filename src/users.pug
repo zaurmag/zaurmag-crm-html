@@ -16,7 +16,7 @@ block main
 			data-bs-target="#addUserForm"
 		)
 			+icon("person-plus").fz-18.me-sm-2
-			span.d-sm-inline.d-none Добавить пользователя
+			span.d-sm-inline.d-none Добавить
 
 	//- User list
 	.card.shadow-sm-soft.mb-30
@@ -75,3 +75,6 @@ block main
 		footer.card-footer
 			//- Pagination
 			include ./components/pagination/pagination
+
+append endBody
+	include ./components/form/form--add-user

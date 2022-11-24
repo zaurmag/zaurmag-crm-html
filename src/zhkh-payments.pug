@@ -1,0 +1,28 @@
+extends ./base/base
+
+append variables
+	- var title = 'Оплата коммунальных услуг'
+	- var pageId = 'zhkh'
+	- var pageUrl = getPageUrl(pageId)
+
+block main
+	//- Page header
+	header.main__header
+		h1.h4.main__header-tlt= title
+		.d-flex.align-items-center
+			button.main__add-btn.btn.btn-primary.shadow-sm-soft(
+				type="button"
+				data-bs-toggle="modal"
+				data-bs-target="#addRecordForm"
+			)
+				+icon("pencil-square").me-sm-2
+				span.d-sm-inline.d-none Добавить показания
+
+			a.btn.btn-outline-secondary.ms-10.px-3.btn--s45(href="/zhkh-settings.html")
+				+icon("gear").fz-16
+
+	//- Records list
+	include ./components/card/card--zhkh-list
+
+append endBody
+	include ./components/form/form--add-zhkh
