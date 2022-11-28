@@ -29,12 +29,13 @@
 
 					th #
 					th Дата платежа
-					th Электр.
-					th Газ
-					th Вода
+					th(style="min-width: 100px") Электр., квт/ч
+					th(style="min-width: 100px") Газ, м#[sup 3]
+					th(style="min-width: 100px") Вода, м#[sup 3]
+					th(style="min-width: 100px") Мусор
 					th Сумма
-					th(style="width: 150px") Статус
-					th(style="width: 150px") Действие
+					th(style="min-width: 120px") Статус
+					th(style="min-width: 150px") Действие
 
 			tbody
 				- var i = 1
@@ -46,10 +47,11 @@
 						td= i
 						td
 							a.table-cell-title-link.is-transition(href="/page-zhkh.html") 09.10.2022 г.
-						td 1 400 квт/ч
-						td 1 800 м#[sup 3]
-						td 650 м#[sup 3]
+						td 1 400
+						td 1 800
+						td 650
 						td 3 300 ₽
+						td 400 ₽
 						td
 							span.indicator.bg-success.me-2
 							| Оплачено

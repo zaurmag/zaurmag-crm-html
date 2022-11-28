@@ -1,12 +1,32 @@
-.card-header-title
-    font-weight: 600
+.card
+    &-header-title
+        font-weight: 600
 
-.card-subtitle
-    text-transform: uppercase
-    font-size: 14px
-    font-weight: 600
-    margin-bottom: 15px
+    &-subtitle
+        text-transform: uppercase
+        font-size: 14px
+        font-weight: 600
+        margin-bottom: 15px
 
-.card-footer
-    padding: 20px
+    &-footer
+        padding: 20px
 
+    // Colors
+    &--blue
+        background-color: $primary
+        border-color: $primary
+        color: $white
+
+    &--yellow
+        background-color: $warning
+        border-color: $warning
+
+    &--gray
+        background-color: $secondary
+        border-color: $secondary
+        color: $white
+
+    &--green
+        background-color: $success
+        border-color: $success
+        color: $white
