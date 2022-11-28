@@ -5,29 +5,35 @@ append variables
 
 block main
 	//- Page header
-	header.main__header
-		.d-flex.align-items-center
-			h1.h4.main__header-tlt= title
-			.ms-30
-				span.indicator.indicator--lg.bg-success.me-10
-				span.fz-16 Оплачено
+	header.main__header.d-block
+		.row.align-items-center.g-20
+			.col-sm.d-flex.align-items-center
+				h1.h4.main__header-tlt= title
+				.ms-3.d-none.d-sm-block
+					span.indicator.indicator--lg.bg-success.me-10
+					span.fz-16 Оплачено
 
-		.d-flex.align-items-center
-			button.btn.btn-primary.px-3(
-				type="button"
-				data-bs-toggle="modal"
-				data-bs-target="#addRecordForm"
-			)
-				+icon("pencil-square").me-sm-2
-				span.d-sm-inline.d-none Редактировать
+			.col-sm-auto.d-flex.align-items-center.justify-content-between
+				.me-3.d-sm-none
+					span.indicator.indicator--lg.bg-success.me-10
+					span.fz-16 Оплачено
 
-			button.btn.btn-outline-danger.px-3.ms-10(
-				type="button"
-				data-bs-toggle="modal"
-				data-bs-target="#confirm"
-			)
-				+icon("trash")
-				span.ms-1.d-none.d-lg-inline Удалить
+				.d-flex.align-items-center
+					button.btn.btn-primary.px-3(
+						type="button"
+						data-bs-toggle="modal"
+						data-bs-target="#addRecordForm"
+					)
+						+icon("pencil-square").me-sm-2
+						span.d-sm-inline.d-none Редактировать
+
+					button.btn.btn-outline-danger.px-3.ms-10(
+						type="button"
+						data-bs-toggle="modal"
+						data-bs-target="#confirm"
+					)
+						+icon("trash")
+						span.ms-1.d-none.d-lg-inline Удалить
 
 	.card.shadow-sm-soft
 		.card-body.p-sm-30
@@ -36,9 +42,9 @@ block main
 					thead
 						tr
 							th(scope="col") Показания
-							th(scope="col") Электричество, квт/ч
-							th(scope="col") Газ, м#[sup 3]
-							th(scope="col") Вода, м#[sup 3]
+							th(scope="col" style="width: 200px") Электричество, квт/ч
+							th(scope="col" style="width: 200px") Газ, м#[sup 3]
+							th(scope="col" style="width: 200px") Вода, м#[sup 3]
 							th(scope="col") Сумма
 
 					tbody
