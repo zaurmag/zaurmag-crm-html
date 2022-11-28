@@ -1,14 +1,14 @@
 extends ./base/base
 
 append variables
-	- var title = 'Платеж по коммунальным - 09.10.2022 г.'
+	- var title = 'Платеж — 09.10.2022 г.'
 
 block main
 	//- Page header
 	header.main__header.d-block
 		.row.align-items-center.g-20
 			.col-sm.d-flex.align-items-center
-				h1.h4.main__header-tlt= title
+				h1.h3.main__header-tlt= title
 				.ms-3.d-none.d-sm-block
 					span.indicator.indicator--lg.bg-success.me-10
 					span.fz-16 Оплачено
@@ -35,50 +35,56 @@ block main
 						+icon("trash")
 						span.ms-1.d-none.d-lg-inline Удалить
 
-	.card.shadow-sm-soft
-		.card-body.p-sm-30
-			.table-responsive
-				table.table.table-lg.mb-30
-					thead
-						tr
-							th(scope="col") Показания
-							th(scope="col" style="width: 200px") Электричество, квт/ч
-							th(scope="col" style="width: 200px") Газ, м#[sup 3]
-							th(scope="col" style="width: 200px") Вода, м#[sup 3]
-							th(scope="col") Сумма
+	.row.justify-content-center
+		.col-xxl-10
+			.card.shadow-sm-soft
+				.card-body.p-sm-30
+					h2.h4.mb-xxl-30 Сумма: 3 500 ₽
+					.row.g-20.mb-30
+						.col-xl-3.col-sm-6
+							.card.card--green.h-100
+								.card-body.p-25
+									h3.card-subtitle Электричество, квт/ч
+									p Предыдущие: #[span.fz-16 1 400]
+									p Текущие: #[span.fz-16 1 500]
+									p Разница: #[span.fz-16 100]
+									p.m-0 Сумма: #[span.fw-medium.fz-16 1 500 ₽]
 
-					tbody
-						tr
-							th(scope="row") предыдущие
-							td 1 400
-							td 1 800
-							td 650
-							td 2 000 ₽
+						.col-xl-3.col-sm-6
+							.card.card--yellow.h-100
+								.card-body.p-25
+									h3.card-subtitle Газ, м#[sup 3]
+									p Предыдущие: #[span.fz-16 1 800]
+									p Текущие: #[span.fz-16 1 900]
+									p Разница: #[span.fz-16 100]
+									p.m-0 Сумма: #[span.fw-medium.fz-16 2 000 ₽]
 
-						tr
-							th(scope="row") текущие
-							td #[span.fz-18.fw-medium 1 500]
-							td #[span.fz-18.fw-medium 1 900]
-							td #[span.fz-18.fw-medium 665]
-							td #[span.fz-18.fw-medium 3 300 ₽]
+						.col-xl-3.col-sm-6
+							.card.card--blue.h-100
+								.card-body.p-25
+									h3.card-subtitle Вода, м#[sup 3]
+									p Предыдущие: #[span.fz-16 600]
+									p Текущие: #[span.fz-16 665]
+									p Разница: #[span.fz-16 15]
+									p.m-0 Сумма: #[span.fw-medium.fz-16 300 ₽]
 
-						tr
-							th(scope="row") разница
-							td 100
-							td 700
-							td 15
-							td 1 300 ₽
+						.col-xl-3.col-sm-6
+							.card.card--gray.h-100
+								.card-body.p-25
+									h3.card-subtitle Мусор
+									p Количество человек: #[span.fz-16 6]
+									p.m-0 Сумма: #[span.fw-medium.fz-16 400 ₽]
 
-			//- Description cols
-			.row
-				.col-sm
-					p #[strong Описание]
-					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque commodi corporis dicta doloribus ea error hic ipsam labore laboriosam libero molestiae nesciunt, placeat quae quia quod reprehenderit sed voluptatum.
+					//- Description cols
+					.row
+						.col-sm
+							p #[strong Описание]
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque commodi corporis dicta doloribus ea error hic ipsam labore laboriosam libero molestiae nesciunt, placeat quae quia quod reprehenderit sed voluptatum.
 
-				.col-sm
-					p #[strong Фото квитанции]
-					button.btn.btn-empty.p-0(type="button" data-bs-toggle="modal" data-bs-target="#openModalImage")
-						img.img-fluid(src="./images/foto-zhkh.jpg" alt="Фото квитанции ЖКХ")
+						.col-sm
+							p #[strong Фото квитанции]
+							button.btn.btn-empty.p-0(type="button" data-bs-toggle="modal" data-bs-target="#openModalImage")
+								img.img-fluid(src="./images/foto-zhkh.jpg" alt="Фото квитанции ЖКХ")
 
 append endBody
 	include ./components/form/form--add-zhkh
