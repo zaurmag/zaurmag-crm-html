@@ -1,0 +1,30 @@
++modal("zhkhSettingForm", "Тарифы")
+	form(action='#')
+		.mb-3
+			label.form-label(for="zhkhEl") Электричество, 1 кв/ч, руб.
+			input#zhkhEl.form-control.form-control-lg(type="number" value="2,6")
+
+		.mb-3
+			label.form-label(for="zhkhGas") Газ, 1 м#[sup 3], руб.
+			input#zhkhGas.form-control.form-control-lg(type="number" value="6")
+
+		.mb-3
+			label.form-label(for="zhkhWater") Вода с канализацией, 1 м#[sup 3], руб.
+			input#zhkhWater.form-control.form-control-lg(type="number" value="22")
+
+		.mb-3.row
+			p.form-label Мусор
+			.col
+				label.form-label(for="zhkhTrashTarif") 1 чел., руб.
+				input#zhkhTrashTarif.form-control.form-control-lg(type="number" value="80")
+
+			.col
+				label.form-label(for="zhkhTrashPropisano") Прописано, чел.
+				input#zhkhTrashPropisano.form-control.form-control-lg(type="number" value="6")
+
+		.mb-3
+			label.form-label(for="zhkhGasObsl") Обслуживание газ. оборудования, руб.
+			input#zhkhGasObsl.form-control.form-control-lg(type="number" value="50")
+
+		.text-center
+			button.btn.btn-primary.w-100.px-3(type="submit") Сохранить
