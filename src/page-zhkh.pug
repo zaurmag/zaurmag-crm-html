@@ -35,7 +35,11 @@ block main
 						+icon("trash")
 						span.ms-1.d-none.d-lg-inline Удалить
 
-					a.btn.btn-outline-secondary.ms-10.px-3(href="/zhkh-settings.html")
+					button.btn.btn-outline-secondary.ms-10.px-3(
+						type="button"
+						data-bs-toggle="modal"
+						data-bs-target="#zhkhSettingForm"
+					)
 						+icon("gear").fz-16
 						span.ms-1.d-none.d-lg-inline Тарифы
 
@@ -92,6 +96,7 @@ block main
 
 append endBody
 	include ./components/form/form--add-zhkh
+	include ./components/form/form--zhkh-settings
 
 	//- Modal image
 	+modal('openModalImage').modal-xl.modal--empty
